@@ -38,6 +38,13 @@
 	border: 2px dotted #000;
 }
 
+#reply{
+	width: 99%;
+	margin: 10px auto;
+	border: 1px dotted #000;
+	text-align: center;
+}
+
 #control-panel{
 	width: 50px;
 	height: 50px;
