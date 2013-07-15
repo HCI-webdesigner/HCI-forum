@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS `debate` (
 -- Constraints for table `debate`
 --
 ALTER TABLE `debate`
+  ADD CONSTRAINT `user2_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `post1_id` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

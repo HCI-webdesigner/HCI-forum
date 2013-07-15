@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `post` (
 -- Constraints for table `post`
 --
 ALTER TABLE `post`
+  ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
   ADD CONSTRAINT `board_id` FOREIGN KEY (`board_id`) REFERENCES `board` (`id`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
