@@ -7,14 +7,14 @@
 </head>
 <body>
 	<div id="main">
-		<form action="">
+		<form action="/HCI-forum/Controller/register.php" method="post">
 			<label for="userName">用户名：</label>
-			<input type="text" /><br />
+			<input type="text" name="userName"/><br />
 			<label for="pwd">密码：</label>
-			<input type="password" /><br />
-			<label for="pwd-confirm">确认密码：</label>
-			<input type="password" /><br />
-			<input type="submit" />&nbsp;&nbsp;<input type="reset" />
+			<input type="password" name="pwd"/><br />
+			<label for="pwd_confirm">确认密码：</label>
+			<input type="password" name="pwd_confirm"/><br />
+			<input type="submit" name="sub"/>&nbsp;&nbsp;<input type="reset" />
 		</form>
 	</div>
 </body>
