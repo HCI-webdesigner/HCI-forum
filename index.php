@@ -1,5 +1,5 @@
 <?php
-	require_once('/var/www/HCI-forum/View/index.html');
+	require_once('../HCI-forum/View/indexView.php');
 	switch ($_GET['action']) {
 		case 'delete':
 		//delete;
