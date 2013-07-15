@@ -23,13 +23,20 @@
 	line-height: 28px;
 }
 
-#submit-button{
+#submit-button,#register-button{
 	width: 70px;
 	height: 20px;
-	margin: 0 auto;
 	border: 1px dotted #000;
 	text-align: center;
 	line-height: 20px;
+}
+#submit-button{
+	margin-left: 50px;
+	float: left;
+}
+#register-button{
+	margin-right: 50px;
+	float: right;
 }
 
 #main{
