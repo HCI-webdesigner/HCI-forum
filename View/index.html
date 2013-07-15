@@ -9,12 +9,12 @@
 	<div id="header">
 		<img src="../HCI-forum/images/logo.png" alt="logo" style="float:left;margin-left:100px"/>
 		<div id="login">
-			<form action="">
+			<form action="" name="login_form">
 				<label for="">名字：</label>
-				<input type="text" /><br />
+				<input type="text" name="usr"/><br />
 				<label for="">密码：</label>
-				<input type="password" /><br />
-				<input type="submit" />
+				<input type="password" name="pwd"/><br />
+				<div id="submit-button">submit</div>
 			</form>
 		</div>
 	</div>
@@ -140,5 +140,7 @@
 		</div>
 	</div>
 	<div id="footer"></div>
+
+	<script type="text/javascript" src="../HCI-forum/javascripts/index.js"></script>
 </body>
 </html>
