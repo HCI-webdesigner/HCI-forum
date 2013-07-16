@@ -44,11 +44,11 @@ EOT;
 		$list.=<<<EOT
 
 		<div class="board">
-		<a href="../HCI-forum/View/board
+		<a href="../HCI-forum/View/area.php?area=
 EOT;
 		$list.=$list_arr['id'];
 		$list.=<<<EOT
-.php" target="_blank">
+" target="_blank">
 			<div class="board-logo">
 				<img src="
 EOT;
