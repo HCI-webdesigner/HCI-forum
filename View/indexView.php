@@ -37,7 +37,7 @@ EOT;
 EOT;
 	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
 	$list='';
-	$conn = new DataAccess("localhost","root","root","hciForum");
+	$conn = new DataAccess("localhost","root","zsl0917zsl","hciForum");
 	$sql1 = "SELECT icon_url FROM area";
 	$result = mysql_query($sql1);
 	while(mysql_fetch_array($result)){
