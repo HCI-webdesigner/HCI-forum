@@ -4,6 +4,7 @@
 		function __construct($host, $user, $pass, $db) {
 			$this->result=mysql_connect($host, $user, $pass);
 			mysql_select_db($db, $this->result);
+			mysql_query("set names 'utf8'");
 		}
 	}
 ?>
