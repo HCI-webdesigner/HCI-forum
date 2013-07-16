@@ -1,11 +1,20 @@
 <?php
-	require_once('../HCI-forum/View/indexView.php');
+	require_once('/var/www/HCI-forum/View/indexView.php');
 	switch ($_GET['action']) {
-		case 'delete':
+		case "delete":
 		//delete;
 			break;
-		case 'post':
+		case "post":
 		//post
+		case "register":
+		require_once('/var/www/HCI-forum/Controller/register.php');
+		if($_POST['sub']) {
+			$account = $_POST["userName"];
+			$pwd = $_POST["pwd"];
+			$pwd_confirm = $_POST["pwd_confirm"];
+			new Register($account, $pwd, $pwd_confirm);
+		}
+		break;
 		default:
 			break;
 	}

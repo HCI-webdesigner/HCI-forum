@@ -1,14 +1,10 @@
 <?php
-	include('/var/www/HCI-forum/Model/DataAccess.php');
 	class User {
-		$account;
-		$pass;
-		function __construtor($account,$pass) {
+		public $account;
+		public $pass;
+		function __construct($account,$pass) {
 			$this->account = $account;
 			$this->pass = md5($pass);
-			$conn = new DataAccess("localhost", "root", "root");
-			$conn->selectDatabase("hciFroum");
-			
 		}
 	}
 ?>

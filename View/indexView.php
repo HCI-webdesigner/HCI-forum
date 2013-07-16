@@ -5,11 +5,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<title>HCI技术论坛</title>
-	<link rel="stylesheet" href="../HCI-forum/stylesheets/index.css" />
+	<link rel="stylesheet" href="/HCI-forum/stylesheets/index.css" />
 </head>
 <body>
 	<div id="header">
-		<img src="../HCI-forum/images/logo.png" alt="logo" style="float:left;margin-left:100px"/>
+		<img src="/HCI-forum/images/logo.png" alt="logo" style="float:left;margin-left:100px"/>
 		<div id="login">
 			<form action="" name="login_form">
 				<label for="">名字：</label>
@@ -17,7 +17,7 @@
 				<label for="">密码：</label>
 				<input type="password" name="pwd"/><br />
 				<div id="submit-button">submit</div>
-				<a href="../HCI-forum/View/register.html">
+				<a href="/HCI-forum/View/register.html">
 					<div id="register-button">register</div>
 				</a>
 			</form>
@@ -31,13 +31,13 @@ EOT;
 </div>
 	<div id="footer"></div>
 
-	<script type="text/javascript" src="../HCI-forum/javascripts/index.js"></script>
+	<script type="text/javascript" src="/HCI-forum/javascripts/index.js"></script>
 </body>
 </html>
 EOT;
-
+	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
 	$list='';
-	$conn = new DataBase("localhost","root","zsl0917zsl","hciForum");
+	$conn = new DataAccess("localhost","root","root","hciForum");
 	$sql1 = "SELECT icon_url FROM area";
 	$result = mysql_query($sql1);
 	while(mysql_fetch_array($result)){
