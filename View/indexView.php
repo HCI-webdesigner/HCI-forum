@@ -37,8 +37,7 @@ EOT;
 EOT;
 
 	$list='';
-	$conn = mysql_connect("localhost","root","zsl0917zsl");
-	mysql_select_db("hciForum",$conn);
+	$conn = new DataBase("localhost","root","zsl0917zsl","hciForum");
 	$sql1 = "SELECT icon_url FROM area";
 	$result = mysql_query($sql1);
 	while(mysql_fetch_array($result)){
