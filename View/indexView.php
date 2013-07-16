@@ -44,7 +44,7 @@ EOT;
 		$list.=<<<EOT
 
 		<div class="board">
-		<a href="../HCI-forum/View/area.php?area=
+			<a href="../HCI-forum/View/area.php?area=
 EOT;
 		$list.=$list_arr['id'];
 		$list.=<<<EOT
