@@ -1,5 +1,4 @@
 <?php
-	require_once('/var/www/HCI-forum/View/indexView.php');
 	switch ($_GET['action']) {
 		case "delete":
 		//delete;
@@ -16,6 +15,7 @@
 		}
 		break;
 		default:
+		require_once('/var/www/HCI-forum/View/indexView.php');
 			break;
 	}
 ?>

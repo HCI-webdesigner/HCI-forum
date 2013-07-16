@@ -38,11 +38,39 @@ EOT;
 	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
 	$list='';
 	$conn = new DataAccess("localhost","root","zsl0917zsl","hciForum");
-	$sql1 = "SELECT icon_url FROM area";
+	$sql1 = "SELECT * FROM `area`";
 	$result = mysql_query($sql1);
-	while(mysql_fetch_array($result)){
-		$list_arr=mysql_fetch_array($result);
-		$list.= "<img src='".$list_arr["icon_url"]."'><br/>";
+	while($list_arr = mysql_fetch_array($result)){
+		$list.=<<<EOT
+		<div class="board">
+			<div class="board-logo">
+				<img src="
+EOT;
+		$list.=$list_arr['icon_url'];
+		$list.=<<<EOT
+" alt="logo" />
+				<h3>
+EOT;
+		$list.=$list_arr['name'];
+		$list.=<<<EOT
+				</h3>
+			</div>
+			<div class="top-posts">
+				<ul>
+					<li>·</li>
+					<li>·</li>
+					<li>·</li>
+					<li>·</li>
+					<li>·</li>
+					<li>·</li>
+					<li>·</li>
+					<li>·</li>
+					<li>·</li>
+					<li>·</li>
+				</ul>
+			</div>
+		</div>
+EOT;
 	}
 
 	echo $header;
