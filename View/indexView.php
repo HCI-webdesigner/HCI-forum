@@ -37,12 +37,18 @@ EOT;
 EOT;
 	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
 	$list='';
-	$conn = new DataAccess("localhost","root","root","hciForum");
+	$conn = new DataAccess("localhost","root","zsl0917zsl","hciForum");
 	$sql1 = "SELECT * FROM `area`";
 	$result = mysql_query($sql1);
 	while($list_arr = mysql_fetch_array($result)){
 		$list.=<<<EOT
+
 		<div class="board">
+		<a href="../HCI-forum/View/board
+EOT;
+		$list.=$list_arr['id'];
+		$list.=<<<EOT
+.php" target="_blank">
 			<div class="board-logo">
 				<img src="
 EOT;
@@ -53,8 +59,9 @@ EOT;
 EOT;
 		$list.=$list_arr['name'];
 		$list.=<<<EOT
-				</h3>
+</h3>
 			</div>
+			</a>
 			<div class="top-posts">
 				<ul>
 					<li>·</li>

@@ -19,7 +19,7 @@
 		$_SESSION['score'] = $score;
 		$_SESSION['level'] = $level;
 		$_SESSION['auth'] = $auth;
-		setcookie("usr", $usr);
+		//setcookie("usr", $usr);
 		$sendBack = array('correct' => 'yes','usr'=>$usr );
 	}
 	else{
