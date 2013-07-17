@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 16, 2013 at 10:12 AM
+-- Generation Time: Jul 17, 2013 at 02:59 PM
 -- Server version: 5.5.31-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.1
 
@@ -34,14 +34,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `authority` int(11) NOT NULL,
   `password` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=14 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `account`, `score`, `level`, `authority`, `password`) VALUES
-(10, 'hhq', 0, 0, 0, '9e8ca68bf7de888a350681d2f060c18e');
+(10, 'hhq', 0, 0, 0, '9e8ca68bf7de888a350681d2f060c18e'),
+(13, '胡华泉', 0, 0, 0, '9e8ca68bf7de888a350681d2f060c18e');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 16, 2013 at 03:38 PM
+-- Generation Time: Jul 17, 2013 at 02:59 PM
 -- Server version: 5.5.31-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.1
 
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `board` (
 --
 
 INSERT INTO `board` (`id`, `name`, `moderator`, `area_id`) VALUES
-(1, 'HTML/HTML5', '', 1),
+(1, 'HTML/HTML5', 'hhq', 1),
 (2, 'CSS', '', 1),
 (3, 'Javascript', '', 1),
 (4, '设计与美工', '', 1),
