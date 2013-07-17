@@ -11,44 +11,60 @@
 <body>
 	<div id="body">
 		<div id="header">
-			<img src="/HCI-forum/images/logo.png" alt="logo" />
+			<a href="/HCI-forum"><img src="/HCI-forum/images/logo.png" alt="logo" /></a>
 		</div>
 
 EOT;
 	
 	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
-	$conn = new DataAccess("localhost","root","root","hciForum");
+	$conn = new DataAccess("localhost","root","zsl0917zsl","hciForum");
 	$area = $_GET['area'];
 	$sql1 = "SELECT * FROM `board` WHERE area_id=".$area;
 	$result1 = mysql_query($sql1);
 	$nav = <<<EOT
 		<div id="nav">
 			<ul>
-
-EOT;
-	while ($list_arr = mysql_fetch_array($result1)) {
-		$nav.= <<<EOT
 			<a href="
 EOT;
-		$nav.= "";//board url
+	$nav.='/HCI-forum/View/area.php?area='.$area.'&board=0">';
+	$nav.=<<<EOT
+				<li>全部</li>
+			</a>
+
+EOT;
+	while ($list_arr1 = mysql_fetch_array($result1)) {
+		$nav.= <<<EOT
+			<a href="/HCI-forum/View/area.php?area=
+EOT;
+		$nav.= $area.'&board='.$list_arr1['id'];//board url
 		$nav.= <<<EOT
 " >
 				<li>
 EOT;
-		$nav.=$list_arr['name'];
+		$nav.=$list_arr1['name'];
 		$nav.= <<<EOT
 </li>
 			</a>
 
 EOT;
 	}
-
-	//$sql2 = 
+	$board = $_GET['board'];
+	if($board == 0) {
+		$sql2 = "SELECT * FROM `post`";
+	}
+	else{
+		$sql2 = "SELECT * FROM `post` WHERE 'board_id'=".$board;
+	}
+	$result2 = mysql_query($sql2);
+	while ($list_arr2 = mysql_fetch_array($result2)){
+		echo '1';
+	}
 	$list = <<<EOT
 		</div>
 		<div id="list">
 			<div id="setting"></div>
 			<ul>
+
 
 EOT;
 
@@ -60,6 +76,8 @@ EOT;
 </body>
 </html>
 EOT;
+
+
 	echo $header;
 	echo $nav;
 	echo $list;
