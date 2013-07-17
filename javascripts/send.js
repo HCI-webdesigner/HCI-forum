@@ -5,7 +5,7 @@ window.onload = function(){
 function linkedSelect(){
 	var i=0;
 	var list2 = [];//初始化第二个列表
-	list2.push(['HTML/HTML','1','1']);//格式：list2['名称','对应的板块的值','自己的value']
+	list2.push(['HTML/HTML5','1','1']);//格式：list2['名称','对应的板块的值','自己的value']
 	list2.push(['CSS','1','2']);
 	list2.push(['Javascript','1','3']);
 	list2.push(['设计和美工','1','4']);

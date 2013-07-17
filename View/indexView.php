@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div id="header">
-		<img src="/HCI-forum/images/logo.png" alt="logo" style="float:left;margin-left:100px"/>
+		<a href="/HCI-forum"><img src="/HCI-forum/images/logo.png" alt="logo" style="float:left;margin-left:100px"/></a>
 
 EOT;
 

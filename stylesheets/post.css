@@ -40,9 +40,12 @@
 
 .comment{
 	width: 600px;
-	height: 200px;
 	margin: 10px  0px 10px 340px;
 	border: 2px dotted #000;
+}
+.comment-usr,.comment-date{
+	width: 600px;
+	text-align: right;
 }
 
 #send-comment{
