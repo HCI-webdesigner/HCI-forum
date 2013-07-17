@@ -1,5 +1,5 @@
 <?php
-	
+	session_start();
 	$header = <<<EOT
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
@@ -49,15 +49,6 @@ EOT;
 
 EOT;
 	}
-
-	/*$board = $_GET['board'];
-	if($board == 0) {
-		$sql2 = "SELECT * FROM `post`";
-	}
-	else{
-		$sql2 = "SELECT * FROM `post` WHERE board_id=".$board;
-	}
-	$result2 = mysql_query($sql2);*/
 	$list = <<<EOT
 		</div>
 		<div id="list">
@@ -66,27 +57,6 @@ EOT;
 
 
 EOT;
-	/*while ($list_arr2 = mysql_fetch_array($result2)){
-		$list.=<<<EOT
-				<li>
-					<a href="" class="list-a">
-						<div class="post-link">
-							<span class="title">
-EOT;
-		$list.=$list_arr2['title'];
-		$list.=<<<EOT
-</span>
-							<span class="time">
-EOT;
-		$list.=$list_arr2['post_date'];
-		$list.=<<<EOT
-</span>
-						</div>
-					</a>
-				</li>
-
-EOT;
-	}*/
 
 	$footer = <<<EOT
 			</ul>

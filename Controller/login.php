@@ -1,5 +1,5 @@
-<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <?php
+	session_start();
 	include_once('/var/www/HCI-forum/Model/DataAccess.php');
 	$usr = $_POST["usr"];
 	$pwd = $_POST["pwd"];
@@ -15,13 +15,15 @@
 		$score = $info['score'];
 		$level = $info['level'];
 		$auth = $info['authority'];
-		$_SESSION = array();
 		$_SESSION['usr'] = $usr;
 		$_SESSION['score'] = $score;
 		$_SESSION['level'] = $level;
 		$_SESSION['auth'] = $auth;
+		$_SESSION['state'] = true;
+		echo "<script language=javascript>alert('$_SESSION[state] Welcome $_SESSION[usr]');location='/HCI-forum/';</script>";
 	}
 	else{
 		
 	}
 ?>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
