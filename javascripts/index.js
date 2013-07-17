@@ -10,7 +10,7 @@ function ajaxLogin(){
 function startLogin(){
 	var usr = window.document.login_form.usr.value;
 	var pwd = window.document.login_form.pwd.value;
-	var url = "../HCI-forum/Controller/login.php?usr="+usr+"&pwd="+pwd;
+	var url = "/HCI-forum/Controller/login.php?usr="+usr+"&pwd="+pwd;
 	postRequest(url);
 }
 

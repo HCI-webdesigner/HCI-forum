@@ -50,14 +50,14 @@ EOT;
 EOT;
 	}
 
-	$board = $_GET['board'];
+	/*$board = $_GET['board'];
 	if($board == 0) {
 		$sql2 = "SELECT * FROM `post`";
 	}
 	else{
 		$sql2 = "SELECT * FROM `post` WHERE board_id=".$board;
 	}
-	$result2 = mysql_query($sql2);
+	$result2 = mysql_query($sql2);*/
 	$list = <<<EOT
 		</div>
 		<div id="list">
@@ -66,7 +66,7 @@ EOT;
 
 
 EOT;
-	while ($list_arr2 = mysql_fetch_array($result2)){
+	/*while ($list_arr2 = mysql_fetch_array($result2)){
 		$list.=<<<EOT
 				<li>
 					<a href="" class="list-a">
@@ -86,7 +86,7 @@ EOT;
 				</li>
 
 EOT;
-	}
+	}*/
 
 	$footer = <<<EOT
 			</ul>
@@ -100,6 +100,11 @@ EOT;
 
 	echo $header;
 	echo $nav;
+	echo "<br>";
+	include_once('/var/www/HCI-forum/Controller/allPost.php');
+	$areaId = $_GET['area'];
+	$boardId = $_GET['board'];
+	new AllPost($areaId, $boardId);
 	echo $list;
 	echo $footer;
 ?>

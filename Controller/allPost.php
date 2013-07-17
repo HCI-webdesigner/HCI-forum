@@ -4,7 +4,7 @@
 	</head>
 </html>
 <?php
-	
+	session_start();
 	class AllPost {
 		public $allPost = array();
 		function __construct($areaId, $boardId) {

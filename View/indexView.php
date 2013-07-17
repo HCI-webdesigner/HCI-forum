@@ -11,14 +11,14 @@
 	<div id="header">
 		<img src="/HCI-forum/images/logo.png" alt="logo" style="float:left;margin-left:100px"/>
 		<div id="login">
-			<form action="" name="login_form">
+			<form action="/HCI-forum/Controller/login.php" name="login_form" method="post">
 				<label for="">名字：</label>
 				<input type="text" name="usr"/><br />
 				<label for="">密码：</label>
 				<input type="password" name="pwd"/><br />
-				<div id="submit-button">submit</div>
+				<input type="submit" name="login" id="submit-button"/>
 				<a href="/HCI-forum/View/register.html">
-					<div id="register-button">register</div>
+				<div id="register-button">register</div>
 				</a>
 			</form>
 		</div>
@@ -30,8 +30,6 @@ EOT;
 	$footer = <<<EOT
 </div>
 	<div id="footer"></div>
-
-	<script type="text/javascript" src="/HCI-forum/javascripts/index.js"></script>
 </body>
 </html>
 EOT;
@@ -82,5 +80,6 @@ EOT;
 
 	echo $header;
 	echo $list;
+	echo $_SESSION['usr']."user";
 	echo $footer;
 ?>
