@@ -24,9 +24,16 @@
 	border: 1px dotted #000;
 }
 
-#msg{
+#postTitle{
+	width: 95%;
+	height: 50px;
+	margin: 5px auto;
+	text-align: center;
+	background: #ddd;
+}
+
+#post{
 	width: 600px;
-	height: 200px;
 	margin: 10px 0px 10px 60px;
 	border: 2px dotted #000;
 }

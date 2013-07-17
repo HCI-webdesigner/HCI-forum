@@ -49,7 +49,7 @@ EOT;
 
 EOT;
 	}
-	$list = <<<EOT
+	$nav .= <<<EOT
 		</div>
 		<div id="list">
 			<div id="setting"></div>
@@ -70,7 +70,6 @@ EOT;
 
 	echo $header;
 	echo $nav;
-	echo "<br>";
 	include_once('/var/www/HCI-forum/Controller/allPost.php');
 	$areaId = $_GET['area'];
 	$boardId = $_GET['board'];
