@@ -11,6 +11,10 @@
 <body>
 	<div id="header">
 		<img src="/HCI-forum/images/logo.png" alt="logo" style="float:left;margin-left:100px"/>
+
+EOT;
+
+	$loginBox = <<<EOT
 		<div id="login">
 			<form action="/HCI-forum/Controller/login.php" name="login_form" method="post">
 				<label for="">名字：</label>
@@ -19,10 +23,14 @@
 				<input type="password" name="pwd"/><br />
 				<input type="submit" name="login" id="submit-button"/>
 				<a href="/HCI-forum/View/register.html">
-				<div id="register-button">register</div>
+					<div id="register-button">register</div>
 				</a>
 			</form>
 		</div>
+
+EOT;
+	$header.=$loginBox;
+	$header.=<<<EOT
 	</div>
 	<div id="main">
 EOT;
@@ -36,7 +44,7 @@ EOT;
 EOT;
 	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
 	$list='';
-	$conn = new DataAccess("localhost","root","root","hciForum");
+	$conn = new DataAccess("localhost","root","zsl0917zsl","hciForum");
 	$sql1 = "SELECT * FROM `area`";
 	$result = mysql_query($sql1);
 	while($list_arr = mysql_fetch_array($result)){

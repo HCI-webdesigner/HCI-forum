@@ -17,7 +17,7 @@
 EOT;
 	
 	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
-	$conn = new DataAccess("localhost","root","root","hciForum");
+	$conn = new DataAccess("localhost","root","zsl0917zsl","hciForum");
 	$area = $_GET['area'];
 	$sql1 = "SELECT * FROM `board` WHERE area_id=".$area;
 	$result1 = mysql_query($sql1);
