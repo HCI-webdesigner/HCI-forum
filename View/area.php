@@ -28,6 +28,7 @@ EOT;
 EOT;
 	$nav.='/HCI-forum/View/area.php?area='.$area.'&board=0">';
 	$nav.=<<<EOT
+
 				<li>全部</li>
 			</a>
 
@@ -70,12 +71,20 @@ EOT;
 				<li>
 					<a href="" class="list-a">
 						<div class="post-link">
-							<span class="title">·</span>
-							<span class="time">July 14,2013</span>
-							<span class="reply-num">8/40</span>
+							<span class="title">
+EOT;
+		$list.=$list_arr2['title'];
+		$list.=<<<EOT
+</span>
+							<span class="time">
+EOT;
+		$list.=$list_arr2['post_date'];
+		$list.=<<<EOT
+</span>
 						</div>
 					</a>
 				</li>
+
 EOT;
 	}
 
