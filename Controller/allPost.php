@@ -4,7 +4,7 @@
 		public $allPost = array();
 		function __construct($areaId, $boardId) {
 			include_once('/var/www/HCI-forum/Model/DataAccess.php');
-			$conn = new DataAccess("localhost", "root", "zsl0917zsl", "hciForum");
+			$conn = new DataAccess("hciForum");
 			$postList='';
 			if($boardId == 0) {
 				$sql = "SELECT post.* FROM post,board WHERE

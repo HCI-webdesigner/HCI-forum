@@ -29,7 +29,9 @@ EOT;
 		</div>
 
 EOT;
-	$header.=$loginBox;
+	if(!$_SESSION['state']) {
+		$header.=$loginBox;
+	}
 	$header.=<<<EOT
 	</div>
 	<div id="main">
@@ -44,7 +46,7 @@ EOT;
 EOT;
 	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
 	$list='';
-	$conn = new DataAccess("localhost","root","zsl0917zsl","hciForum");
+	$conn = new DataAccess("hciForum");
 	$sql1 = "SELECT * FROM `area`";
 	$result = mysql_query($sql1);
 	while($list_arr = mysql_fetch_array($result)){

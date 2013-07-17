@@ -4,7 +4,7 @@
 	$usr = $_POST["usr"];
 	$pwd = $_POST["pwd"];
 	$pwd = md5($pwd);
-	$conn = new DataAccess("localhost","root","zsl0917zsl","hciForum");
+	$conn = new DataAccess("hciForum");
 	$sql1 = "SELECT password FROM `user` WHERE account='$usr' AND password='$pwd'";
 	$result1 = mysql_query($sql1);
 	$match = mysql_num_rows($result1);

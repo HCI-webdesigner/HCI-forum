@@ -17,7 +17,7 @@
 EOT;
 	
 	include_once('/var/www/HCI-forum/Model/DataAccess.php');
-	$conn = new DataAccess("localhost","root", "zsl0917zsl","hciForum");
+	$conn = new DataAccess("hciForum");
 	$postId = $_GET['id'];
 	$sql = "SELECT * FROM post WHERE id='$postId'";
 	$query=mysql_query($sql);
