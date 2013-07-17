@@ -48,17 +48,15 @@ EOT;
 
 EOT;
 	}
+
 	$board = $_GET['board'];
 	if($board == 0) {
 		$sql2 = "SELECT * FROM `post`";
 	}
 	else{
-		$sql2 = "SELECT * FROM `post` WHERE 'board_id'=".$board;
+		$sql2 = "SELECT * FROM `post` WHERE board_id=".$board;
 	}
 	$result2 = mysql_query($sql2);
-	while ($list_arr2 = mysql_fetch_array($result2)){
-		echo '1';
-	}
 	$list = <<<EOT
 		</div>
 		<div id="list">
@@ -67,6 +65,19 @@ EOT;
 
 
 EOT;
+	while ($list_arr2 = mysql_fetch_array($result2)){
+		$list.=<<<EOT
+				<li>
+					<a href="" class="list-a">
+						<div class="post-link">
+							<span class="title">·</span>
+							<span class="time">July 14,2013</span>
+							<span class="reply-num">8/40</span>
+						</div>
+					</a>
+				</li>
+EOT;
+	}
 
 	$footer = <<<EOT
 			</ul>
