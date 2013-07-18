@@ -88,12 +88,26 @@ EOT;
 	$footer = <<<EOT
 
 			<div id="send-comment">
+EOT;
+
+	$commentForm = "";
+	if($_SESSION['state']){
+		$commentForm .= <<<EOT
 				<form action="">
 					<label for="">发表评论：</label>
 					<textarea name="" id="" cols="30" rows="10"></textarea><br />
 					<input type="submit" />
 					<input type="reset" />
 				</form>
+EOT;
+	}
+	else{
+		$commentForm .="您还没有登录哦！请先<a href='/HCI-forum/'>登录</a>再评论吧！";
+	}
+
+	$footer .= $commentForm;
+	$footer .= <<<EOT
+
 			</div>
 			<div id="control-panel">+</div>
 		</div>
@@ -109,10 +123,11 @@ EOT;
 	echo $postTitle;
 	echo $postDiv;
 	echo $commentDiv;
-	if($_SESSION['state']) {
-		echo $footer;
-	}
-	else {
-		echo "<a href="."/HCI-forum/index.php".">"."登录后才可以评论."."<"."/a>";
-	}
+	echo $footer;
+	// if($_SESSION['state']) {
+	// 	echo $footer;
+	// }
+	// else {
+	// 	echo "<a href="."/HCI-forum/index.php".">"."登录后才可以评论."."<"."/a>";
+	// }
 ?>
