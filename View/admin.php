@@ -30,14 +30,33 @@ EOT;
 	$main = <<<EOT
 	<div id="main">
 		<div id="nav-bar">
-			<div class="nav-button">帖子审核</div>
-			<div class="nav-button">模块管理</div>
-			<div class="nav-button">版主管理</div>
+			<a href="?action=1"><div class="nav-button">帖子审核</div></a>
+			<a href="?action=2"><div class="nav-button">模块管理</div></a>
+			<a href="?action=3"><div class="nav-button">版主管理</div></a>
 		</div>
 		<div id="content">
-			<div class="inner-content">帖子审核</div>
-			<div class="inner-content">模块管理</div>
-			<div class="inner-content">版主管理</div>
+EOT;
+	
+	$action = $_GET['action'];
+	switch ($action) {
+		case 1:
+		$main .= "帖子审核";
+		break;
+
+		case 2:
+		$main .= "模块管理";
+		break;
+
+		case 3:
+		$main .= "版主管理";
+		break;
+		
+		default:
+		$main .= "管理员首页";
+		break;
+	}
+
+	$main .= <<<EOT
 		</div>
 	</div>
 
@@ -48,7 +67,6 @@ EOT;
 		
 	</div>
 
-	<script type="text/javascript" src="/HCI-forum/javascripts/admin.js"></script>
 </body>
 </html>
 EOT;
