@@ -29,6 +29,7 @@ EOT;
 		</div>
 
 EOT;
+
 	$infoBox = <<<EOT
 		<div id="info">
 			Hello！
@@ -43,11 +44,13 @@ EOT;
 			$infoBox.="&nbsp;&nbsp;&nbsp;<a href='/HCI-forum/View/admin.php'>后台管理</a>";
 		}
 		$infoBox.=<<<EOT
+
 		</div>
 EOT;
 		$header.=$infoBox;
 	}
 	$header.=<<<EOT
+
 	</div>
 	<div id="main">
 EOT;
@@ -59,6 +62,7 @@ EOT;
 </body>
 </html>
 EOT;
+
 	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
 	$list='';
 	$conn = new DataAccess("hciForum");
@@ -86,22 +90,26 @@ EOT;
 </h3>
 			</div>
 			</a>
+
+EOT;
+		$postsList = <<<EOT
 			<div class="top-posts">
 				<ul>
-					<li>·</li>
-					<li>·</li>
-					<li>·</li>
-					<li>·</li>
-					<li>·</li>
-					<li>·</li>
-					<li>·</li>
-					<li>·</li>
-					<li>·</li>
-					<li>·</li>
+
+EOT;
+		
+		include_once('/var/www/HCI-forum/Controller/topPost.php');
+		$areaId = $list_arr['id'];
+		$obj = new topPost($areaId);
+		$postsList .= $obj->topList;
+
+		$postsList .= <<<EOT
 				</ul>
 			</div>
 		</div>
 EOT;
+		
+		$list .= $postsList;
 	}
 	echo $header;
 	echo $list;

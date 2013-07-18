@@ -12,16 +12,19 @@
 <body>
 	<div id="header">
 		<a href="/HCI-forum"><img src="/HCI-forum/images/logo.png" alt="logo" /></a>
+
 EOT;
 	
 	$info = <<<EOT
 		<div id="info">
 
 EOT;
-	$info.= "<a href="."'/HCI-forum/Controller/logout.php'".">"."注销"."</a>";
+	$info.= "			<a href="."'/HCI-forum/Controller/logout.php'".">"."注销"."</a>";
 	$info.= <<<EOT
+
 		</div>
 	</div>
+
 EOT;
 	
 	$main = <<<EOT
@@ -37,6 +40,7 @@ EOT;
 			<div class="inner-content">版主管理</div>
 		</div>
 	</div>
+
 EOT;
 	
 	$footer = <<<EOT

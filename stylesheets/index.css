@@ -69,6 +69,17 @@
 	float: right;
 	background: #ddd;
 }
+.top-posts li{
+	width: 490px;
+	height: 30px;
+	margin: 5px;
+	background: #fff;
+	line-height: 30px;
+}
+
+.time{
+	float: right;
+}
 
 #footer{
 	width: 980px;

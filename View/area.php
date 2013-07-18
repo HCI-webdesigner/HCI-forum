@@ -69,7 +69,23 @@ EOT;
 		</div>
 		<div id="list">
 			<div id="setting">
-				<a href="/HCI-forum/View/send.html">发帖</a>//login
+EOT;
+
+	$sendLink = "";
+	$loginLink = "";
+	$logoutLink = "";
+
+	if($_SESSION['state']) {
+		$sendLink = "Hello！".$_SESSION['usr']."！您可以：".'<a href="/HCI-forum/View/send.html">发帖</a>';
+		$logoutLink = "<a href='/HCI-forum/Controller/logout.php'>注销</a>";
+	}
+	else{
+		$loginLink = "您还没有登录哦！要先".'<a href="/HCI-forum/">登录</a>'."了才能发帖子哦！";
+	}
+
+	$nav .= $loginLink."&nbsp;&nbsp;&nbsp;".$sendLink."&nbsp;&nbsp;&nbsp;".$logoutLink;
+	$nav .= <<<EOT
+
 			</div>
 			<ul>
 
@@ -85,9 +101,6 @@ EOT;
 </html>
 EOT;
 
-	if($_SESSION['state']) {
-		$header.="<a href='/HCI-forum/Controller/logout.php'>注销</a>";
-	}
 	echo $header;
 	echo $nav;
 	include_once('/var/www/HCI-forum/Controller/allPost.php');
