@@ -1,6 +1,6 @@
 <?php
 	include_once('/var/www/HCI-forum/Model/DataAccess.php');
-	$conn = new DataAccess("localhost", "root", "root", "hciForum");
+	$conn = new DataAccess("hciForum");
 	class postEdit {
 		function __construct($title, $content) {
 			$current_userName = $_SESSION['usr'];

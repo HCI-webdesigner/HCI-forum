@@ -1,5 +1,5 @@
 <?php
-
+	session_start();
 	include_once('/var/www/HCI-forum/Model/DataAccess.php');
 	$conn = new DataAccess("hciForum");
 	$postId = $_GET['id'];
@@ -102,10 +102,17 @@ EOT;
 </body>
 </html>
 EOT;
-
+	if($_SESSION['state']) {
+		$header.="<a href='/HCI-forum/Controller/logout.php'>注销</a>";
+	}
 	echo $header;
 	echo $postTitle;
 	echo $postDiv;
 	echo $commentDiv;
-	echo $footer;
+	if($_SESSION['state']) {
+		echo $footer;
+	}
+	else {
+		echo "<a href="."/HCI-forum/index.php".">"."登录后才可以评论."."<"."/a>";
+	}
 ?>

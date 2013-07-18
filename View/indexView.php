@@ -32,6 +32,9 @@ EOT;
 	if(!$_SESSION['state']) {
 		$header.=$loginBox;
 	}
+	else {
+		$header.="<a href='/HCI-forum/Controller/logout.php'>注销</a>";
+	}
 	$header.=<<<EOT
 	</div>
 	<div id="main">

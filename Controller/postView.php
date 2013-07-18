@@ -5,8 +5,8 @@
 	include_once('/var/www/HCI-forum/Model/DataAccess.php');
 	class PostView {
 		function __construct() {
-			$conn = new DataAccess("localhost", "root", "root", "hciForum");
-			$sql = "SELECT * FROM `post`";
+			$conn = new DataAccess("hciForum");
+			$sql = "SELECT * FROM `post` order by id db2_escape_string(string_literal)";
 			$query = mysql_query($sql);
 			while($post_row=mysql_fetch_array($query)) {
 				$temp_user=mysql_fetch_array(mysql_query("SELECT account FROM `user` WHERE id='$post_row[user_id]'"));

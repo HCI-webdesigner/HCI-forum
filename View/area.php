@@ -1,6 +1,5 @@
 <?php
 	session_start();
-
 	include_once ('/var/www/HCI-forum/Model/DataAccess.php');
 	$conn = new DataAccess("hciForum");
 	$area = $_GET['area'];
@@ -70,7 +69,7 @@ EOT;
 		</div>
 		<div id="list">
 			<div id="setting">
-				<a href="/HCI-forum/View/send.html">发帖</a>
+				<a href="/HCI-forum/View/send.html">发帖</a>//login
 			</div>
 			<ul>
 
@@ -86,7 +85,9 @@ EOT;
 </html>
 EOT;
 
-
+	if($_SESSION['state']) {
+		$header.="<a href='/HCI-forum/Controller/logout.php'>注销</a>";
+	}
 	echo $header;
 	echo $nav;
 	include_once('/var/www/HCI-forum/Controller/allPost.php');

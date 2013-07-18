@@ -20,10 +20,15 @@
 		$_SESSION['level'] = $level;
 		$_SESSION['auth'] = $auth;
 		$_SESSION['state'] = true;
-		echo "<script language=javascript>alert('$_SESSION[state] Welcome $_SESSION[usr]');location='/HCI-forum/';</script>";
+		if(!$auth) {
+			echo "<script language=javascript>alert('Welcome $_SESSION[usr]');location='/HCI-forum/';</script>";
+		}
+		else {
+			echo "<script language=javascript>alert('Welcome 管理员 $_SESSION[usr]');location='/HCI-forum/View/admin.php';</script>";
+		}
 	}
 	else{
-		
+		echo "<script language=javascript>alert('帐号或密码错误');location='/HCI-forum'</script>";
 	}
 ?>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">

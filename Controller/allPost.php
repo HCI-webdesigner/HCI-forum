@@ -38,7 +38,7 @@ EOT;
 				}
 			}
 			else {
-				$sql = "SELECT post.* FROM post WHERE post.board_id='$boardId'";
+				$sql = "SELECT post.* FROM post WHERE post.board_id='$boardId' order by id desc";
 				$query = mysql_query($sql);
 				while($post_row=mysql_fetch_array($query)) {
 					$temp_user=mysql_fetch_array(mysql_query("SELECT account FROM `user` WHERE id='$post_row[user_id]'"));
