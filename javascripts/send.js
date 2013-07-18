@@ -9,8 +9,8 @@ function linkedSelect(){
 	list2.push(['CSS','1','2']);
 	list2.push(['Javascript','1','3']);
 	list2.push(['设计和美工','1','4']);
-	list2.push(['PHP','2','5']);
-	list2.push(['Java','2','6']);
+	list2.push(['Java','2','5']);
+	list2.push(['PHP','2','6']);
 	list2.push(['JSP','2','8']);
 	list2.push(['Python','2','9']);
 	list2.push(['框架','2','10']);
@@ -24,7 +24,7 @@ function linkedSelect(){
 	list2.push(['其他','5','18']);
 	list2.push(['实习资讯','6','19']);
 	list2.push(['求职信息','6','20']);
-	list2.push(['经验分享','6','21']);
+	list2.push(['经验交流','6','21']);
 	list2.push(['讲座活动','6','22']);
 	list2.push(['其他','6','23']);
 	list2.push(['情感','7','24']);

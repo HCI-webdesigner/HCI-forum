@@ -29,11 +29,23 @@ EOT;
 		</div>
 
 EOT;
+	$infoBox = <<<EOT
+		<div id="info">
+			Hello！
+EOT;
 	if(!$_SESSION['state']) {
 		$header.=$loginBox;
 	}
 	else {
-		$header.="<a href='/HCI-forum/Controller/logout.php'>注销</a>";
+		$infoBox.= $_SESSION['usr']."！<br/>";
+		$infoBox.="<a href='/HCI-forum/Controller/logout.php'>注销</a>";
+		if($_SESSION['auth']){
+			$infoBox.="&nbsp;&nbsp;&nbsp;<a href='/HCI-forum/View/admin.php'>后台管理</a>";
+		}
+		$infoBox.=<<<EOT
+		</div>
+EOT;
+		$header.=$infoBox;
 	}
 	$header.=<<<EOT
 	</div>
