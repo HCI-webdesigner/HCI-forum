@@ -8,7 +8,7 @@
 			$postList='';
 			if($boardId == 0) {
 				$sql = "SELECT post.* FROM post,board WHERE
-					post.board_id=board.id AND board.area_id='$areaId'";
+					post.board_id=board.id AND board.area_id='$areaId' order by id desc";
 				$query = mysql_query($sql);
 				while($allPost=mysql_fetch_array($query)) {
 					$temp_user = mysql_fetch_array(mysql_query("SELECT account from user WHERE id='$allPost[user_id]'"));
