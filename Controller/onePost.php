@@ -1,4 +1,7 @@
 <?php
+	
+	require_once("/var/www/HCI-forum/View/postHeader.php");
+
 	include_once('/var/www/HCI-forum/Model/DataAccess.php');
 	$conn = new DataAccess("hciForum");
 	$postId = $_GET['postId'];
@@ -9,7 +12,6 @@
 		$post_content = $post_rows['content'];
 	}
 	include_once('/var/www/HCI-forum/View/onePostView.php');
+
+	require_once("/var/www/HCI-forum/View/postFooter.html");
 ?>
-<html>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-</html>

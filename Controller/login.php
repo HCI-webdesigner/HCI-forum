@@ -24,7 +24,7 @@
 			echo "<script language=javascript>location='/HCI-forum/';</script>";
 		}
 		else {
-			echo "<script language=javascript>location='/HCI-forum/View/admin.php';</script>";
+			echo "<script language=javascript>location='/HCI-forum/View/admin.html';</script>";
 		}
 	}
 	else{
