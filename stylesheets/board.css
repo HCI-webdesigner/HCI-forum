@@ -44,13 +44,13 @@
 
 .post-link{
 	width: 988px;
-	height: 40px;
 	margin: 5px;
+	line-height: 30px;
 	background: #ddd;
 }
 
-.title{
-	float: left;
+.type{
+	float: right;
 }
 .time{
 	float: right;

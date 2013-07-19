@@ -2,7 +2,6 @@
 	foreach ($areaIconUrl as $key=>$v) {
 ?>
 		<div class="board">
-
 			<a href="/HCI-forum/Controller/boardController.php?area=<?php echo $areaId[$key]; ?>&board=0">
 				<div class="board-logo">
 					<img src="<?php echo $v; ?>">

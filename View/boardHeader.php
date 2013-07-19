@@ -10,5 +10,3 @@
 		<div id="header">
 			<a href="/HCI-forum"><img src="/HCI-forum/images/logo.png" alt="logo" /></a>
 		</div>
-		<div id="nav">
-			<ul>

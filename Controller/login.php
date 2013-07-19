@@ -21,10 +21,10 @@
 		$_SESSION['auth'] = $auth;
 		$_SESSION['state'] = true;
 		if(!$auth) {
-			echo "<script language=javascript>alert('Welcome $_SESSION[usr]');location='/HCI-forum/';</script>";
+			echo "<script language=javascript>location='/HCI-forum/';</script>";
 		}
 		else {
-			echo "<script language=javascript>alert('Welcome 管理员 $_SESSION[usr]');location='/HCI-forum/View/admin.php';</script>";
+			echo "<script language=javascript>location='/HCI-forum/View/admin.php';</script>";
 		}
 	}
 	else{

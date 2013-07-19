@@ -26,13 +26,18 @@
 #submit-button,#register-button{
 	width: 70px;
 	height: 20px;
+	background: #fff;
 	border: 1px solid #000;
 	text-align: center;
 	line-height: 20px;
 }
+#submit-button:hover,#register-button:hover{
+	background: #eee;
+}
 #submit-button{
 	margin-left: 50px;
 	float: left;
+	cursor: pointer;
 }
 #register-button{
 	margin-right: 50px;

@@ -1,26 +1,38 @@
+
+			<ul>
 <?php
 	foreach ($postUser as $key => $user) {
 ?>
-	<h1><?php echo $user;?></h1>
-	<h1><?php echo $postTitle[$key];?></h1>
-	<h2>类型</h2>
-	<h1><?php
-		switch ($postType[$key]) {
-		case '0':
-			echo "普通帖";
-			break;
-		case '1':
-			echo "问答帖";
-		case '2':
-			echo "辩论帖";
-		case '3':
-			echo "精华帖";
-		default:
-			break;
-		}?></h1>
+				<li>
+					<a href="" class="list-a">
+					<div class="post-link">
+					<span calss="author"><?php echo $user;?>:</span>
+					<span class="title"><?php echo $postTitle[$key];?></span>
+					<span class="time"><?php echo $postDate[$key];?></span>
+					<span class="type">
+						<?php
+						switch ($postType[$key]) {
+							case '0':
+								echo "普通帖";
+								break;
+							case '1':
+								echo "问答帖";
+								break;
+							case '2':
+								echo "辩论帖";
+								break;
+							case '3':
+								echo "精华帖";
+								break;
+							default:
+								break;
+						}?>
+
+					</span>
+					</div>
+					</a>
+				</li>
 <?php
 	}
 ?>
-<html>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
-</html>
+			</ul>
