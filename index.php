@@ -1,8 +1,5 @@
 <?php
 	switch ($_GET['action']) {
-	function __autoload($className) {
-
-	}
 		case "delete":
 		//delete;
 			break;

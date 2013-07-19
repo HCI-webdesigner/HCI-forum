@@ -1,12 +1,22 @@
 <?php
 	class Area {
+		public $id;
 		public $name;
-		public $content;
-		public $img_url;
-		function __construct($name, $count, $img_url) {
+		public $count;
+		public $icon_url;
+		function __construct($id,$name, $count, $icon_url) {
+			$this->id = $id;
 			$this->name = $name;
 			$this->count = $count;
-			$this->img_url = $img_url;
+			$this->icon_url = $icon_url;
+		}
+
+		function getId() {
+			return $this->id;
+		}
+
+		function setId($id) {
+			$this->id = $id;
 		}
 
 		function getName() {
@@ -29,7 +39,7 @@
 			return $this->icon_url;
 		}
 
-		function setImgUrl($icon_url) {
+		function setIconUrl($icon_url) {
 			$this->icon_url = $icon_url;
 		}
 	}
