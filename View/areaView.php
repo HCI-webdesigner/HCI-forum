@@ -3,7 +3,7 @@
 ?>
 		<div class="board">
 
-			<a href="/HCI-forum/Controller/boardController.php?id=<?php echo $areaId[$key]; ?>">
+			<a href="/HCI-forum/Controller/boardController.php?area=<?php echo $areaId[$key]; ?>&board=0">
 				<div class="board-logo">
 					<img src="<?php echo $v; ?>">
 					<h3><?php echo $areaName[$key]; ?></h3>
