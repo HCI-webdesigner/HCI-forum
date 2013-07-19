@@ -1,44 +1,75 @@
 window.onload = function(){
-	ajaxLogin();
+
+	checkLogin();//ajax check login info
+
 }
 
-function ajaxLogin(){
-	var button = document.getElementById("submit-button");
-	button.onclick = startLogin;//待修改
-}
-
-function startLogin(){
-	var usr = window.document.login_form.usr.value;
-	var pwd = window.document.login_form.pwd.value;
-	var url = "/HCI-forum/Controller/login.php?usr="+usr+"&pwd="+pwd;
-	postRequest(url);
-}
-
-function postRequest(urlStr){
-	var xmlHttp;
+function XHR(urlStr){//XHR == XMLHttpRequest
+	var request;
 	if(window.XMLHttpRequest){
-		xmlHttp = new XMLHttpRequest();
+		request = new XMLHttpRequest();
 	}
 	else if(window.ActiveXObject){
-		xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+		request = new ActiveXObject("Microsoft.XMLHTTP");
 	}
-	xmlHttp.open('POST',urlStr,true);
-	xmlHttp.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-	xmlHttp.onreadystatechange = function(){
-		if(xmlHttp.readyState == 4){
-			updatePage(xmlHttp.responseText);
-		}
-	}
-	xmlHttp.send(urlStr);
+	request.open('POST',urlStr,true);
+	request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+	request.send(urlStr);
+	return request;
 }
 
-function updatePage(str){
-	var obj = eval ("(" + str + ")");
-	var login_box = document.getElementById("login");
-	if(obj.correct == "yes"){
-		login_box.innerHTML = "Hello," + obj.usr;
+function checkLogin(){
+	var loginInfo;
+	var infoBox = document.getElementById('info');
+	loginInfo = XHR('/HCI-forum/Controller/checkLogin.php');
+	loginInfo.onreadystatechange = function(){
+		if(loginInfo.readyState == 4){
+			if(loginInfo.responseText){
+				var obj = eval("("+loginInfo.responseText+")");
+				infoBox.innerHTML = 'Hello！'+obj.usr+'<br/>';
+				infoBox.innerHTML += '您的积分是:'+obj.score+'&nbsp;&nbsp;您的等级是:'+obj.level+'<br/>';
+				infoBox.innerHTML += '您可以:&nbsp;&nbsp;<a href="/HCI-forum/View/send.html">发帖</a>';
+				infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/Controller/logout.php">注销</a>';
+				if(obj.auth == '1'){
+					infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/View/admin.php">后台管理</a>';
+				}
+			}
+			else{
+				showForm();
+			}
+		}
 	}
-	else{
-		alert("登录失败");
-	}
+}
+
+function showForm(){
+	var info = document.getElementById('info');
+	var form = document.createElement('form');
+	var label1 = document.createElement('label');
+	var label2 = document.createElement('label');
+	var br = document.createElement("br");
+	var usr = document.createElement('input');
+	var pwd = document.createElement('input');
+	var submit = document.createElement('input');
+	var a = document.createElement('a');
+	form.action = '/HCI-forum/Controller/login.php';
+	form.name = 'login_form';
+	form.method = 'post';
+	label1.innerHTML = '名字：';
+	label2.innerHTML = '密码：';
+	usr.type = 'text';
+	usr.name = 'usr';
+	pwd.type = 'password';
+	pwd.name = 'pwd';
+	submit.type = 'submit';
+	submit.id = 'submit-button';
+	a.href = '/HCI-forum/View/register.html';
+	a.innerHTML = '<div id="register-button">register</div>';
+	form.appendChild(label1);
+	form.appendChild(usr);
+	form.appendChild(br);
+	form.appendChild(label2);
+	form.appendChild(pwd);
+	form.appendChild(submit);
+	form.appendChild(a);
+	info.appendChild(form);
 }
