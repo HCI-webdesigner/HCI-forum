@@ -17,15 +17,16 @@
 	}
 	require_once("/var/www/HCI-forum/View/boardHeader.php");
 
-	$areaId = $_GET['area'];
-	$sql="SELECT * FROM `board` WHERE area_id='$areaId'";
+	$sql="SELECT * FROM `board` WHERE area_id='$area'";
 	$query = mysql_query($sql);
 	$board_num = mysql_num_rows($query);
+	$boardName = array();
+	$boardModerator = array();
 	for($i=0;$i<$board_num;$i++) {
 		$boardList = mysql_fetch_array($query);
-		$board=new Board($boardList['name'], $boardList['moderator']);
-		include('/var/www/HCI-forum/View/boardView.php');
+		array_push($boardName ,$boardList['name']);
+		array_push($boardModerator ,$boardList['moderator']);
 	}
-
+	include('/var/www/HCI-forum/View/boardView.php');
 	require_once("/var/www/HCI-forum/View/boardFooter.html");
 ?>

@@ -1,6 +1,7 @@
 <?php
-	$boardName = $board->name;
-	$boardModerator = $board->moderator;
+	foreach ($boardName as $key=>$boardname) {
 ?>
-	
-				<li><?php echo $boardName; ?></li>
+	<li><?php echo $boardname; ?></li>
+<?php	
+	}
+?>
