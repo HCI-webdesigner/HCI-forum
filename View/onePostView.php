@@ -1,14 +1,16 @@
 			<div id="postTitle"><?php echo $post_title;?></div>
 			<div id="msg">
-				<?php echo $post_content;?>
-				<?php echo "<br>用户 : ".$post_user;?>
+			<h2><?php echo $post_user;?>:</h2>
+			<?php echo $post_content;?>
 			</div>
-			评论: 
 <?php
 	foreach ($commentUser as $key => $commentuser) {
 ?>
-	<div id="comment_user"><?php echo $commentuser;?></div>
-	<div id="comment_content"><?php echo $commentContent[$key];?></div>
+			<div class="comment">
+				<h3><?php echo $commentuser;?>:</h3>
+				<p><?php echo $commentContent[$key];?></p>
+				<p><?php echo $commentDate[$key];?></p>
+			</div>
 <?php
 	}
 ?>

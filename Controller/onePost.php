@@ -17,10 +17,12 @@
 	$comment_query = mysql_query($comment_sql);
 	$commentContent = array();
 	$commentUser = array();
+	$commentDate = array();
 	while($comment_rows = mysql_fetch_array($comment_query)) {
 		array_push($commentContent, $comment_rows['content']);
 		$comment_user = mysql_fetch_array(mysql_query("SELECT account FROM `user` WHERE id='$comment_rows[user_id]'"));
 		array_push($commentUser, $comment_user[0]);
+		array_push($commentDate, $comment_rows['comment_date']);
 	}
 	include_once('/var/www/HCI-forum/View/onePostView.php');
 	require_once("/var/www/HCI-forum/View/postFooter.html");

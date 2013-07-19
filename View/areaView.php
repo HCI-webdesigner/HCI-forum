@@ -10,9 +10,9 @@
 				</div>
 			</a>
 			<div class="top-posts">
-				<ul>
-					
-				</ul>
+			<ul>
+			<?php include_once('/var/www/HCI-forum/Controller/topPost.php');?>
+			</ul>
 			</div>
 		</div>
 <?	
