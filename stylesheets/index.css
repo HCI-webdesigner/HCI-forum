@@ -14,7 +14,7 @@
 	text-align: center;
 }
 
-#info{
+#login,#info{
 	width: 300px;
 	height: 80px;
 	float: right;
@@ -26,7 +26,6 @@
 #submit-button,#register-button{
 	width: 70px;
 	height: 20px;
-	background: #fff;
 	border: 1px solid #000;
 	text-align: center;
 	line-height: 20px;
