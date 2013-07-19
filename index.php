@@ -15,7 +15,7 @@
 		}
 		break;
 		default:
-		require_once('/var/www/HCI-forum/View/indexView.php');
+		require_once('/var/www/HCI-forum/Controller/indexController.php');
 			break;
 	}
 ?>
