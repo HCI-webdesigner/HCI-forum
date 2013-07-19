@@ -25,12 +25,12 @@
 			$this->count = $count;
 		}
 
-		function getImgUrl() {
-			return $this->img_url;
+		function getIconUrl() {
+			return $this->icon_url;
 		}
 
-		function setImgUrl($img_url) {
-			$this->img_url = $img_url;
+		function setImgUrl($icon_url) {
+			$this->icon_url = $icon_url;
 		}
 	}
 ?>
