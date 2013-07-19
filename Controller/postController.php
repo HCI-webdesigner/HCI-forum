@@ -6,6 +6,7 @@
 	$postContent = array();
 	$postType = array();
 	$postDate = array();
+	$postId = array();
 	$areaId = $_GET['area'];
 	$boardId = $_GET['board'];
 	if($boardId == 0) {
@@ -17,6 +18,7 @@
 			array_push($postContent, $allPost['content']);
 			array_push($postType, $allPost['type']);
 			array_push($postDate, $allPost['post_date']);	
+			array_push($postId, $allPost['id']);
 			$temp_user = mysql_fetch_array(mysql_query("SELECT account from user WHERE id='$allPost[user_id]'"));
 			array_push($postUser, $temp_user[0]);
 		}
@@ -28,10 +30,11 @@
 			array_push($postTitle, $allPost['title']);
 			array_push($postContent, $allPost['content']);
 			array_push($postType, $allPost['type']);
-			array_push($postDate, $allPost['post_date']);	
+			array_push($postDate, $allPost['post_date']);
+			array_push($postId, $allPost['id']);	
 			$temp_user = mysql_fetch_array(mysql_query("SELECT account from user WHERE id='$allPost[user_id]'"));
 			array_push($postUser, $temp_user[0]);
 		}
 	}
-	include_once('/var/www/HCI-forum/View/postView.php');
+	include_once('/var/www/HCI-forum/View/allPostView.php');
 ?>
