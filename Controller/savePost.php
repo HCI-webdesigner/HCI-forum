@@ -23,5 +23,5 @@
 	VALUES ('$title','$content','$type','$point','$deleted','$postDate','$state','$boardId','$userId')";
 	mysql_query($sql);
 
-	echo "<script type='text/javascript'>"
+	echo "<script language=javascript>location='/HCI-forum/';</script>"
 ?>
