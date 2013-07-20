@@ -1,6 +1,6 @@
 <?php
 	define("DS",DIRECTORY_SEPARATOR);
-	define("ROOT","/var/www/HCI-forum");
+	define("ROOT",dirname(dirname(__FILE__)));
 	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
 	include_once(ROOT . DS . "Model" . DS . "board.php");
 	$conn = new DataAccess("hciForum");

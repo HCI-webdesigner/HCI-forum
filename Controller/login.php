@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	define("DS",DIRECTORY_SEPARATOR);
-	define("ROOT","/var/www/HCI-forum");
+	define("ROOT",dirname(dirname(__FILE__)));
 	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
 	$usr = $_POST["usr"];
 	$pwd = $_POST["pwd"];
