@@ -2,8 +2,7 @@
 	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
 	include_once(ROOT . DS . "Model" . DS . "area.php");
 	$conn = new DataAccess("hciForum");
-
-	require_once('/var/www/HCI-forum/View/indexHeader.html');
+	require_once(ROOT . DS . "View" . DS . "indexHeader.html");
 
 	$sql="SELECT * FROM `area`";
 	$query=mysql_query($sql);

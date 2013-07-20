@@ -14,11 +14,9 @@
 		$sql2 = "SELECT * FROM `user` WHERE account='$usr'";
 		$result2 = mysql_query($sql2);
 		$info = mysql_fetch_array($result2);
-		$id = $info['id'];
 		$score = $info['score'];
 		$level = $info['level'];
 		$auth = $info['authority'];
-		$_SESSION['id'] = $id;
 		$_SESSION['usr'] = $usr;
 		$_SESSION['score'] = $score;
 		$_SESSION['level'] = $level;
