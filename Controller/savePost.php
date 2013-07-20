@@ -23,5 +23,10 @@
 	VALUES ('$title','$content','$type','$point','$deleted','$postDate','$state','$boardId','$userId')";
 	mysql_query($sql);
 
-	echo "<script language=javascript>location='/HCI-forum/';</script>"
+	$getPost = "SELECT id FROM `post` WHERE title='$title'";
+	$result = mysql_query($getPost);
+	$resultArr = mysql_fetch_array($result);
+	$postId = $resultArr['id'];
+
+	echo '<script language=javascript>location="/HCI-forum/Controller/onePostCon.php?postId='.$postId.'"</script>';
 ?>
