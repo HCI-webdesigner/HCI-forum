@@ -30,8 +30,8 @@
 					<span calss="author">&nbsp;<?php echo $user;?>:</span>
 					<span class="title"><?php echo $postTitle[$key];?></span>
 					<span class="time"><?php echo $postDate[$key];?></span>
-					<a href="adminPostEdit.php"></a>
-					<a href="adminPostDelete.php"></a>
+					<span><a href="/HCI-forum/Controller/adminPostEdit.php?id=<?php echo $postId[$key];?>">编辑</a></span>
+					<span><a href="/HCI-forum/Controller/adminPostDelete.php?id=<?php echo $postId[$key];?>">删除</a></span>
 					</div>
 					</a>
 				</li>

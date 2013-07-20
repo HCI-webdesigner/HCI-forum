@@ -8,11 +8,16 @@
 	$sql = "SELECT * FROM `post` WHERE id='$postId'";
 	$query = mysql_query($sql);
 	$postMsg = mysql_fetch_array($query);
-
+	$userId = $postMsg['user_id'];
+	$userSql = "SELECT account FROM user WHERE id='$userId'";
 	$postTitle = $postMsg['title'];
 	$postContent = $postMsg['content'];
 	$postType = $postMsg['type'];
 	$postDate = $postMsg['post_date'];
 	$postPoint = $postMsg['point'];
-	$postState = $post
+	$postState = $postMsg['state'];
+	$userResult = mysql_fetch_array(mysql_query($userSql));
+	$postUser = $userResult[0];
+
+	include_once(ROOT . DS . "View" . DS . "adminOnePostView.php");
 ?>
