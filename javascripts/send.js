@@ -48,10 +48,18 @@ function getInfo(){
 	info.onreadystatechange = function(){
 		if(info.readyState == 4){
 			if(info.responseText){
-
+				var obj = eval("("+info.responseText+")");
+				var form = document.getElementById('sendForm');
+				var hiddenUsr = document.createElement("input");
+				hiddenUsr.type = 'text';
+				hiddenUsr.name = 'usrId';
+				hiddenUsr.value = obj.usrId;
+				hiddenUsr.style.display = "none";
+				form.appendChild(hiddenUsr);
 			}
 			else{
 				alert("您还没有登陆哦！！！");
+				location='/HCI-forum/';
 			}
 		}
 	}
