@@ -1,5 +1,6 @@
 window.onload = function(){
 	linkedSelect();
+	getInfo();
 };
 
 function linkedSelect(){
@@ -40,4 +41,32 @@ function linkedSelect(){
 			}
 		}
 	}
+}
+
+function getInfo(){
+	var info = XHR('/HCI-forum/Controller/checkLogin.php');
+	info.onreadystatechange = function(){
+		if(info.readyState == 4){
+			if(info.responseText){
+
+			}
+			else{
+				alert("您还没有登陆哦！！！");
+			}
+		}
+	}
+}
+
+function XHR(urlStr){//XHR == XMLHttpRequest
+	var request;
+	if(window.XMLHttpRequest){
+		request = new XMLHttpRequest();
+	}
+	else if(window.ActiveXObject){
+		request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	request.open('POST',urlStr,true);
+	request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+	request.send(urlStr);
+	return request;
 }

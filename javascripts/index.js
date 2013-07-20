@@ -31,7 +31,7 @@ function checkLogin(){
 				infoBox.innerHTML += '您可以:&nbsp;&nbsp;<a href="/HCI-forum/View/send.html">发帖</a>';
 				infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/Controller/logout.php">注销</a>';
 				if(obj.auth == '1'){
-					infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/View/admin.php">后台管理</a>';
+					infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/Controller/adminCon.php">后台管理</a>';
 				}
 			}
 			else{
