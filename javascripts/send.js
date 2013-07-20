@@ -34,7 +34,7 @@ function linkedSelect(){
 	var s1 = document.getElementById("select-list1");
 	var s2 = document.getElementById("select-list2");
 	s1.onchange = function(){
-		s2.innerHTML='<option value="">--请--选--择--</option>';
+		s2.innerHTML='<option value="0">--请--选--择--</option>';
 		for(i=0;i<list2.length;i++){
 			if(list2[i][1] == s1.value){
 				s2.options.add(new Option(list2[i][0],list2[i][2]));
