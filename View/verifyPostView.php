@@ -2,7 +2,9 @@
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </html>
 <?php
-	include_once('/var/www/HCI-forum/Model/DataAccess.php');
+	define("DS",DIRECTORY_SEPARATOR);
+	define("ROOT","/var/www/HCI-forum");
+	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
 	$conn = new DataAccess("hciForum");
 	$verifyPostId = $_GET['id'];
 	$sql = "SELECT * FROM `post` WHERE id='$verifyPostId'";

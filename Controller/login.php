@@ -1,6 +1,8 @@
 <?php
 	session_start();
-	include_once('/var/www/HCI-forum/Model/DataAccess.php');
+	define("DS",DIRECTORY_SEPARATOR);
+	define("ROOT","/var/www/HCI-forum");
+	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
 	$usr = $_POST["usr"];
 	$pwd = $_POST["pwd"];
 	$pwd = md5($pwd);
@@ -24,7 +26,7 @@
 			echo "<script language=javascript>location='/HCI-forum/';</script>";
 		}
 		else {
-			echo "<script language=javascript>location='/HCI-forum/View/admin.html';</script>";
+			echo "<script language=javascript>location='/HCI-forum/View/admin.php';</script>";
 		}
 	}
 	else{

@@ -1,6 +1,8 @@
 <?php
-	include_once('/var/www/HCI-forum/Model/user.php');
-	include_once('/var/www/HCI-forum/Model/DataAccess.php');
+	define("DS",DIRECTORY_SEPARATOR);
+	define("ROOT","/var/www/HCI-forum");
+	include_once(ROOT . DS . "Model" . DS . "user.php");
+	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
 	class Register {
 		function __construct($account, $pwd, $pwd_confirm) {
 			if($pwd == $pwd_confirm) {

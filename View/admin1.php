@@ -1,5 +1,7 @@
 <?php
-	include_once('/var/www/HCI-forum/Model/DataAccess.php');
+	define("DS",DIRECTORY_SEPARATOR);
+	define("ROOT","/var/www/HCI-forum");
+	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
 
 	$conn = new DataAccess("hciForum");
 	$sql = "SELECT * FROM `post` WHERE type='4'";
@@ -13,7 +15,7 @@
 		$tmp_user = mysql_fetch_array(mysql_query("SELECT account FROM `user` WHERE id='$rows[user_id]'"));
 		array_push($verifyUser, $tmp_user[0]);
 	}
-	include_once('/var/www/HCI-forum/View/verifyView.php');
+	include_once(ROOT . DS . "View" . DS . "verifyView.php");
 ?>
 <html>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">

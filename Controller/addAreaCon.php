@@ -1,20 +1,8 @@
-<html>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-</html>
 <?php
-	define("DS",DIRECTORY_SEPARATOR);
-	define("ROOT","/var/www/HCI-forum");
-	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
-
 	$conn = new DataAccess("hciForum");
-	$areaId = $_GET['id'];
-	$sql = "SELECT * FROM `area` WHERE id= '$areaId'";
-	$query = mysql_query($sql);
-	$areaMsg = mysql_fetch_array($query);
-
 	if($_POST['sub']) {
-		$newAreaName = $_POST['newAreaName'];
-		$areaId = $_POST['areaId'];
+		$areaName = $_POST['areaName'];
+
 		if((($_FILES["file"]["type"] == "image/gif")
 				|| ($_FILES["file"]["type"] == "image/jpeg")
 				|| ($_FILES["file"]["type"] == "image/pjpeg")
@@ -39,9 +27,9 @@
 					echo "Stored in: "."/HCI-forum/images/".$_FILES["file"]["name"];
 				}
 				$areaIcon = "/HCI-forum/images/".$_FILES["file"]["name"];;
-				$sql2 = "UPDATE `area` SET name = '$newAreaName', icon_url='$areaIcon' WHERE id='$areaId'";
-				if(mysql_query($sql2)) {
-					echo "<script language=javascript>alert('修改成功');location='/HCI-forum/Controller/adminController2.php'</script>";
+				$sql = "INSERT INTO `area` (name, icon_url) values ('$areaName', '$areaIcon')";
+				if(mysql_query($sql)) {
+					echo "<script language=javascript>alert('添加成功');location='/HCI-forum/Controller/adminController2.php'</script>";
 				}
 			}
 		}
@@ -52,9 +40,11 @@
 		}
 	}
 ?>
-<form action="editArea.php" method="post" enctype="multipart/form-data">
-	<input type="text" value="<?php echo $areaMsg['name'];?>" name="newAreaName"><br>
-	<input type="file" name="file"><br>
-	<input type="hidden" value="<?php echo $areaId;?>" name="areaId">
-	<input type="submit" name="sub">	
+<html>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+</html>
+<form action="addAreaController.php" method="post" name="addArea" enctype="multipart/form-data">
+	模块名称: <input type="text" name="areaName" size="10"><br>
+	模块图片: <input type="file" name="file" id="file"><br>
+	<input type="submit" name="sub" value="提交">
 </form>

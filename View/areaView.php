@@ -2,7 +2,7 @@
 	foreach ($areaIconUrl as $key=>$v) {
 ?>
 		<div class="board">
-			<a href="/HCI-forum/Controller/boardController.php?area=<?php echo $areaId[$key]; ?>&board=0">
+			<a href="/HCI-forum/Controller/boardCon.php?area=<?php echo $areaId[$key]; ?>&board=0">
 				<div class="board-logo">
 					<img src="<?php echo $v; ?>">
 					<h3><?php echo $areaName[$key]; ?></h3>
@@ -11,7 +11,7 @@
 			</a>
 			<div class="top-posts">
 			<ul>
-			<?php include_once('/var/www/HCI-forum/Controller/topPost.php');?>
+			<?php require_once(ROOT . DS . "Controller" . DS . "topPostCon.php");?>
 			</ul>
 			</div>
 		</div>

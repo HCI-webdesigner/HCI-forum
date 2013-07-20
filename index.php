@@ -1,4 +1,7 @@
 <?php
+	define("DS",DIRECTORY_SEPARATOR);
+	define("ROOT",dirname(__FILE__));
+
 	switch ($_GET['action']) {
 		case "delete":
 		//delete;
@@ -6,7 +9,7 @@
 		case "post":
 		//post
 		case "register":
-		require_once('/var/www/HCI-forum/Controller/register.php');
+		require_once(ROOT . DS . "Controller" . DS . "register.php");
 		if($_POST['sub']) {
 			$account = $_POST["userName"];
 			$pwd = $_POST["pwd"];
@@ -15,7 +18,7 @@
 		}
 		break;
 		default:
-		require_once('/var/www/HCI-forum/Controller/indexController.php');
+		require_once(ROOT . DS . "Controller" . DS . "indexCon.php");
 			break;
 	}
 ?>

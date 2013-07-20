@@ -3,7 +3,7 @@
 ?>
 
 			<li>
-				<a href="/HCI-forum/Controller/onePost.php?postId=<?php echo $pid[$key];?>" class="list-a">
+				<a href="/HCI-forum/Controller/onePostCon.php?postId=<?php echo $pid[$key];?>" class="list-a">
 				<div class="post-link">
 				<span class="type">
 				[<?php
