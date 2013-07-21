@@ -12,6 +12,7 @@
 		$post_user = $user[0];
 		$post_title = $post_rows['title'];
 		$post_content = $post_rows['content'];
+		$post_date = $post_rows['post_date'];
 	}
 	$comment_sql = "SELECT * FROM `comment` WHERE post_id='$postId'";
 	$comment_query = mysql_query($comment_sql);

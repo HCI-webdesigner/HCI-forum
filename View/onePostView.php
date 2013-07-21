@@ -1,7 +1,8 @@
 			<div id="postTitle"><?php echo $post_title;?></div>
 			<div id="msg">
 			<h2><?php echo $post_user;?>:</h2>
-			<?php echo $post_content;?>
+			<p><?php echo $post_content;?></p>
+			<p><?php echo $post_date;?></p>
 			</div>
 <?php
 	foreach ($commentUser as $key => $commentuser) {
