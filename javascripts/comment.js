@@ -1,5 +1,6 @@
 window.onload = function(){
 	getInfo();
+	checkForm();
 };
 
 function getInfo(){
@@ -46,4 +47,15 @@ function XHR(urlStr){//XHR == XMLHttpRequest
 	request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 	request.send(urlStr);
 	return request;
+}
+
+function checkForm(){
+	var submit = document.getElementById('submit-button');
+	var form = document.getElementById('content-form');
+	submit.onclick = function(){
+		if(form.value == ""){
+			alert("您还没有写评论哦～～");
+			return false;
+		}
+	}
 }

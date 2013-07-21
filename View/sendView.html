@@ -9,11 +9,11 @@
 	<div id="main">
 		<form action="/HCI-forum/Controller/savePost.php" id="sendForm" method="post">
 			<label for="title">标题：</label>
-			<input type="text" name="title"/><br />
+			<input type="text" name="title" id="form-title"/><br />
 			<label for="content">内容：</label>
-			<textarea name="content" id="" cols="60" rows="20"></textarea><br />
+			<textarea name="content" id="form-content" cols="60" rows="20"></textarea><br />
 			<label for="type">类型：</label>
-			<select name="type" id="">
+			<select name="type" id="form-type">
 				<option value="0">普通</option>
 				<option value="1">求助</option>
 				<option value="2">辩论</option>
@@ -21,7 +21,7 @@
 			</select>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<label for="point">悬赏：</label>
-			<select name="point" id="">
+			<select name="point" id="form-point">
 				<option value="0">0分</option>
 				<option value="5">5分</option>
 				<option value="10">10分</option>
@@ -46,7 +46,7 @@
 				<option value="0">--请--选--择--</option>
 			</select>
 			<br />
-			<input type="submit" />
+			<input type="submit" id="form-submit"/>
 			<input type="reset" />
 		</form>
 	</div>

@@ -1,6 +1,7 @@
 window.onload = function(){
 	linkedSelect();
 	getInfo();
+	checkForm();
 };
 
 function linkedSelect(){
@@ -77,4 +78,30 @@ function XHR(urlStr){//XHR == XMLHttpRequest
 	request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 	request.send(urlStr);
 	return request;
+}
+
+function checkForm(){
+	var title = document.getElementById('form-title');
+	var content = document.getElementById('form-content');
+	var area = document.getElementById('select-list1');
+	var board = document.getElementById('select-list2');
+	var submit = document.getElementById('form-submit');
+	submit.onclick = function(){
+		if(title.value == ""){
+			alert("您还没有写题目哦～～");
+			return false;
+		}
+		else if(content.value == ""){
+			alert("您还没有写内容哦～～");
+			return false;
+		}
+		else if(area.value == '0'){
+			alert("您还没有选板块哦～～");
+			return false;
+		}
+		else if(board.value == '0'){
+			alert("您还没有选专题哦～～");
+			return false;
+		}
+	}
 }
