@@ -36,6 +36,8 @@
 	width: 600px;
 	margin: 10px 0px 10px 60px;
 	border: 2px dotted #000;
+	word-wrap:break-word;
+	overflow:hidden;
 }
 
 .comment{
