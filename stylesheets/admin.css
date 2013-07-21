@@ -64,3 +64,63 @@
 	margin: 0 auto;
 	border: 2px dashed #000;
 }
+
+#settings{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	background: #ddd;
+}
+
+.areas{
+	width: 200px;
+	margin: 5px;
+	border: 2px dashed #000;
+	text-align: center;
+	display: inline-block;
+}
+
+.buttons{
+	padding: 2px;
+	border: 1px dashed #000;
+	cursor: pointer;
+}
+.buttons:hover{
+	background: #aaa;
+}
+
+.showFrame{
+	cursor: pointer;
+}
+
+#frameDiv{
+	width: 100%;
+	height: 110%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.7);
+	display: none;
+}
+
+#iframe{
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -250px;
+	margin-left: -250px;
+	background: #fff;
+	overflow: auto;
+}
+
+#close-button{
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	background: url(../images/close.png);
+	cursor: pointer;
+}

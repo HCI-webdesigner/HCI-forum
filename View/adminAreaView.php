@@ -1,15 +1,22 @@
-<html>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-</html>
+<div id="settings">
+	<a href="/HCI-forum/Controller/addAreaController.php"><h3>增加模块</h3></a>
+</div>
 <?php
 	foreach ($areaName as $key => $areaname) {
 ?>
-	<h3><a href="../Controller/adminPostCon.php?area=<?php echo $areaId[$key];?>&board=0"><?php echo $areaname;?></a></h3>
-	<h2><img src="<?php echo $areaIcon[$key];?>" width=150 height=150></h2>
-	<a href="/HCI-forum/Controller/editArea.php?id=<?php echo $areaId[$key];?>">编辑</a>
-	<a href="/HCI-forum/Controller/deleteArea.php?id=<?php echo $areaId[$key];?>">删除</a>
+	<div class="areas">
+		<span class="showFrame" id="<?php echo $areaId[$key];?>">
+		<h2><img src="<?php echo $areaIcon[$key];?>"></h2>
+		<h3><?php echo $areaname;?></h3>
+		</span> <!-- href="../Controller/adminPostCon.php?area=<?php echo $areaId[$key];?>&board=0" -->
+		<a href="/HCI-forum/Controller/editArea.php?id=<?php echo $areaId[$key];?>"><span class='buttons'>编辑</span></a>
+		<a href="/HCI-forum/Controller/deleteArea.php?id=<?php echo $areaId[$key];?>"><span class="buttons">删除</span></a>
+	</div>
 <?php
 	}
 ?>
-<br>
-<a href="/HCI-forum/Controller/addAreaController.php"><h2>增加模块</h2></a>
+
+<div id="frameDiv">
+	<iframe src="" frameborder="0" id="iframe"></iframe>
+	<div id="close-button"></div>
+</div>

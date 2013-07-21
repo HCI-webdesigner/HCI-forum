@@ -1,9 +1,28 @@
 window.onload = function(){
 	scrollToFix();
+	clickToShowFrame();
+}
+
+function getELementByClass(outer,inner){
+	var i=0;
+	var result = [];
+	var container;
+	if(outer == 'body'){
+		container = document.body;
+	}
+	else{
+		container = document.getElementById(outer);
+	}
+	var all = container.getElementsByTagName('*');
+	for(i=0;i<all.length;i++){
+		if(all[i].className == inner){
+			result.push(all[i]);
+		}
+	}
+	return result;
 }
 
 function scrollToFix(){
-	
 	var nav = document.getElementById('nav-bar');
 	window.onscroll = function(){
 		if(document.body.scrollTop >= 140){
@@ -16,4 +35,28 @@ function scrollToFix(){
 		}
 	}
 
+}
+
+function clickToShowFrame(){
+	var i=0;
+	var spanButtons = getELementByClass('body','showFrame');
+	var frameDiv = document.getElementById('frameDiv');
+	var iframe = document.getElementById('iframe');
+
+	for(i=0;i<spanButtons.length;i++){
+		changeById();
+	}
+	function changeById(){
+		var j=i;
+		var areaId = spanButtons[i].id;
+		spanButtons[j].onclick = function(){
+			frameDiv.style.display = "block";
+			iframe.src = 'http://localhost/HCI-forum/Controller/adminPostCon.php?area='+areaId+'?board=0';
+		}
+	}
+
+	var closeButton = document.getElementById('close-button');
+	closeButton.onclick = function(){
+		frameDiv.style.display = "none";
+	}
 }
