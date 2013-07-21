@@ -62,7 +62,7 @@ function showForm(){
 	pwd.name = 'pwd';
 	submit.type = 'submit';
 	submit.id = 'submit-button';
-	a.href = '/HCI-forum/View/register.html';
+	a.href = '/HCI-forum/View/registerView.html';
 	a.innerHTML = '<div id="register-button">register</div>';
 	form.appendChild(label1);
 	form.appendChild(usr);
