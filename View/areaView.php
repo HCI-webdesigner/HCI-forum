@@ -1,3 +1,4 @@
+<?php require(ROOT . DS . "Controller" . DS . "topPostCon.php");?>
 <?php 
 	foreach ($areaIconUrl as $key=>$v) {
 ?>
@@ -11,7 +12,7 @@
 			</a>
 			<div class="top-posts">
 			<ul>
-			<?php require_once(ROOT . DS . "Controller" . DS . "topPostCon.php");?>
+			<?php require(ROOT . DS . "Controller" . DS . "topPostCon.php");?>
 			</ul>
 			</div>
 		</div>

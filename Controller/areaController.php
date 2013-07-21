@@ -1,9 +1,9 @@
 <?php
-	include_once('/var/www/HCI-forum/Model/DataAccess.php');
-	include_once('/var/www/HCI-forum/Model/area.php');
+	include('/var/www/HCI-forum/Model/DataAccess.php');
+	include('/var/www/HCI-forum/Model/area.php');
 	$conn = new DataAccess("hciForum");
 
-	require_once('/var/www/HCI-forum/View/indexHeader.html');
+	require('/var/www/HCI-forum/View/indexHeader.html');
 
 	$sql="SELECT * FROM `area`";
 	$query=mysql_query($sql);
@@ -18,7 +18,7 @@
 		array_push($areaCount, $areaList['count']);
 		array_push($areaIconUrl, $areaList['icon_url']);
 	}
-	include_once('/var/www/HCI-forum/View/areaView.php');
+	include('/var/www/HCI-forum/View/areaView.php');
 
-	require_once('/var/www/HCI-forum/View/indexFooter.html');
+	require('/var/www/HCI-forum/View/indexFooter.html');
 ?>

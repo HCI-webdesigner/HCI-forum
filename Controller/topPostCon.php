@@ -21,6 +21,6 @@
 		$tusr = mysql_fetch_array(mysql_query("SELECT account from user WHERE id='$apost[user_id]'"));
 		array_push($pusr, $tusr[0]);
 	}
-	include_once(ROOT . DS . "View" . DS . "topPostView.php");
+	include(ROOT . DS . "View" . DS . "topPostView.php");
 
 ?>
