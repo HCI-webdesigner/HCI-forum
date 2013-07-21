@@ -14,7 +14,7 @@
 	$type = $_POST['type'];
 	$point = $_POST['point'];
 	$deleted = 0;
-	$postDate = date('Y-m-d');
+	$postDate = date('Y-m-d H:i:s');
 	$state = 0;
 	$boardId = $_POST['boardId'];
 	$userId = $_POST['usrId'];

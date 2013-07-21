@@ -6,7 +6,7 @@
 	$conn = new DataAccess("hciForum");
 
 	$content = $_POST['content'];
-	$date = date("Y-m-d");
+	$date = date("Y-m-d H:i:s");
 	$deleted = 0;
 	$postId = $_POST['postId'];
 	$usrId = $_POST['usrId'];
