@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 22, 2013 at 11:25 AM
+-- Generation Time: Jul 22, 2013 at 12:32 PM
 -- Server version: 5.5.31-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.2
 
@@ -31,7 +31,8 @@ CREATE TABLE IF NOT EXISTS `announcement` (
   `title` varchar(255) NOT NULL,
   `content` longtext NOT NULL,
   `area_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `area1_id` (`area_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -261,6 +262,12 @@ CREATE TABLE IF NOT EXISTS `verify` (
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `announcement`
+--
+ALTER TABLE `announcement`
+  ADD CONSTRAINT `area1_id` FOREIGN KEY (`area_id`) REFERENCES `area` (`id`);
 
 --
 -- Constraints for table `board`
