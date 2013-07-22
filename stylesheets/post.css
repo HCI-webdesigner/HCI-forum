@@ -67,6 +67,10 @@
 	border: 2px dotted #000;
 }
 
+.time{
+	text-align: right;
+}
+
 #footer{
 	width: 99%;
 	height: 100px;
