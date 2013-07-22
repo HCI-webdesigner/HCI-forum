@@ -4,7 +4,13 @@
 <?php
 	foreach ($areaName as $key => $areaname) {
 ?>
+<?php 
+		if($areaDeleted[$key]) {
+		}
+		else {
+?>
 	<div class="areas">
+
 		<span class="showFrame" id="<?php echo $areaId[$key];?>">
 		<h2><img src="<?php echo $areaIcon[$key];?>"></h2>
 		<h3><?php echo $areaname;?></h3>
@@ -13,6 +19,7 @@
 		<a href="/HCI-forum/Controller/deleteArea.php?id=<?php echo $areaId[$key];?>"><span class="buttons">删除</span></a>
 	</div>
 <?php
+			}
 	}
 ?>
 
