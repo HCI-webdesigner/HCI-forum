@@ -20,6 +20,9 @@
 				case '3':
 					echo "精华帖";
 					break;
+				case '4':
+					echo "普通帖";
+					break;
 				default:
 					break;
 				}?>]</span>

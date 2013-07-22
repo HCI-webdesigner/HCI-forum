@@ -18,8 +18,8 @@ function getInfo(){
 				form.appendChild(hiddenUsr);
 			}
 			else{
-				alert("您还没有登陆哦！！！");
-				location='/HCI-forum/';
+				var sc = document.getElementById('send-comment');
+				sc.innerHTML = '您还没有<a href="/HCI-forum/">登录</a>哦！';
 			}
 		}
 	}
