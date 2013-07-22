@@ -1,6 +1,7 @@
 window.onload = function(){
 	scrollToFix();
 	clickToShowFrame();
+	showStats();
 }
 
 function getELementByClass(outer,inner){
@@ -50,7 +51,6 @@ function clickToShowFrame(){
 		var j=i;
 		var areaId = spanButtons[i].id;
 		spanButtons[j].onclick = function(){
-			document.body.style.overflow = "hidden";
 			frameDiv.style.display = "block";
 			iframe.src = 'http://localhost/HCI-forum/Controller/adminPostCon.php?area='+areaId+'?board=0';
 		}
@@ -59,7 +59,6 @@ function clickToShowFrame(){
 	var closeButton = document.getElementById('close-button');
 	closeButton.onclick = function(){
 		frameDiv.style.display = "none";
-		document.body.style.overflow = "auto";
 	}
 
 	var backButton = document.getElementById('back-button');
@@ -70,5 +69,27 @@ function clickToShowFrame(){
 	var forwardButton = document.getElementById('forward-button');
 	forwardButton.onclick = function(){
 		iframe.contentWindow.history.forward();
+	}
+}
+
+function showStats(){
+	var request;
+	if(window.XMLHttpRequest){
+		request = new XMLHttpRequest();
+	}
+	else if(window.ActiveXObject){
+		request = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	request.open('POST','/HCI-forum/Controller/stats.php',true);
+	request.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+	request.send('/HCI-forum/Controller/stats.php');
+	request.onreadystatechange = function(){
+		if(request.readyState == 4){
+			var obj = eval("("+request.responseText+")");
+			document.getElementById('areaNum').innerHTML = obj.area;
+			document.getElementById('boardNum').innerHTML = obj.board;
+			document.getElementById('postNum').innerHTML = obj.post;
+			document.getElementById('usrNum').innerHTML = obj.usr;
+		}
 	}
 }
