@@ -6,7 +6,7 @@
 	include_once("/var/www/HCI-forum/Model/DataAccess.php");
 	$conn = new DataAccess("hciForum");
 
-	$sql1 = "SELECT * FROM area";
+	$sql1 = "SELECT * FROM area WHERE deleted = 0";
 	$result1 = mysql_query($sql1);
 	$areaNum = 0;
 	while ($arr1 = mysql_fetch_array($result1)) {
@@ -20,7 +20,7 @@
 		$boardNum++;
 	}
 
-	$sql3 = "SELECT * FROM post";
+	$sql3 = "SELECT * FROM post WHERE deleted = 0";
 	$result3 = mysql_query($sql3);
 	$postNum = 0;
 	while ($arr3 = mysql_fetch_array($result3)) {
