@@ -40,25 +40,26 @@ function scrollToFix(){
 
 function clickToShowFrame(){
 	var i=0;
-	var spanButtons = getELementByClass('body','showFrame');
+	var buttons = getELementByClass('body','buttons');
 	var frameDiv = document.getElementById('frameDiv');
 	var iframe = document.getElementById('iframe');
 
-	for(i=0;i<spanButtons.length;i++){
+	for(i=0;i<buttons.length;i++){
 		changeById();
 	}
 	function changeById(){
 		var j=i;
-		var areaId = spanButtons[i].id;
-		spanButtons[j].onclick = function(){
+		var areaId = buttons[i].id;
+		buttons[j].onclick = function(){
 			frameDiv.style.display = "block";
-			iframe.src = 'http://localhost/HCI-forum/Controller/adminPostCon.php?area='+areaId+'?board=0';
+			iframe.src = 'http://localhost/HCI-forum/'+areaId+'?board=0';
 		}
 	}
 
 	var closeButton = document.getElementById('close-button');
 	closeButton.onclick = function(){
 		frameDiv.style.display = "none";
+		window.location.reload();
 	}
 
 	var backButton = document.getElementById('back-button');

@@ -83,14 +83,6 @@
 
 .buttons{
 	padding: 2px;
-	border: 1px dashed #000;
-	cursor: pointer;
-}
-.buttons:hover{
-	background: #aaa;
-}
-
-.showFrame{
 	cursor: pointer;
 }
 

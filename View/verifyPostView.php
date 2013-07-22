@@ -24,7 +24,7 @@
 			$verify_sql = "UPDATE `post` SET type='0' WHERE id='$verifyPostId'";
 		}
 		if(mysql_query($verify_sql)) {
-				echo "<script language=javascript>alert('操作成功');location='/HCI-forum/Controller/adminCon.php?action=1'</script>";
+				echo "<script language=javascript>alert('操作成功');</script>";
 		}
 	}
 ?>

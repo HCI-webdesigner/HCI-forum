@@ -7,7 +7,7 @@
 	}
 	foreach ($verifyTitle as $key => $verifytitle) {
 ?>
-	<a href="/HCI-forum/View/verifyPostView.php?id=<?php echo $verifyId[$key]; ?>"><?php echo $verifytitle;?></a>
+	<span class="buttons" id="View/verifyPostView.php?id=<?php echo $verifyId[$key]; ?>"><?php echo $verifytitle;?></span>
 	<?php echo $verifyUser[$key];?>
 	<br>
 <?php
