@@ -17,6 +17,7 @@
 	$postDate = date('Y-m-d H:i:s');
 	$state = 0;
 	$boardId = $_POST['boardId'];
+	$areaId = $_POST['areaId'];
 	$userId = $_POST['usrId'];
 
 	$sql = "INSERT INTO `post`(`title`, `content`, `type`, `point`, `deleted`, `post_date`, `state`, `board_id`, `user_id`) 
@@ -27,6 +28,14 @@
 	$result = mysql_query($getPost);
 	$resultArr = mysql_fetch_array($result);
 	$postId = $resultArr['id'];
+
+	$sql2 = "SELECT post.* FROM post,board WHERE
+			post.board_id=board.id AND board.area_id='$areaId'";
+	$result2 = mysql_query($sql2);
+	$postCount = mysql_num_rows($result2);
+	$sql3 = "UPDATE `area` SET count = '$postCount' WHERE id='$areaId'";
+	mysql_query($sql3);
+	
 
 	echo '<script language=javascript>location="/HCI-forum/Controller/onePostCon.php?postId='.$postId.'"</script>';
 ?>

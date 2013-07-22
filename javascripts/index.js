@@ -26,7 +26,7 @@ function checkLogin(){
 		if(loginInfo.readyState == 4){
 			if(loginInfo.responseText){
 				var obj = eval("("+loginInfo.responseText+")");
-				infoBox.innerHTML = 'Hello！'+obj.usr+'<br/>';
+				infoBox.innerHTML = 'Hello，'+obj.usr+'！<br/>';
 				infoBox.innerHTML += '您的积分是:'+obj.score+'&nbsp;&nbsp;您的等级是:'+obj.level+'<br/>';
 				infoBox.innerHTML += '您可以:&nbsp;&nbsp;<a href="/HCI-forum/View/sendView.html">发帖</a>';
 				infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/Controller/logout.php">注销</a>';

@@ -4,7 +4,7 @@
 	$conn = new DataAccess("hciForum");
 	include_once(ROOT . DS. "View" . DS . "indexHeader.html");
 
-	$sql="SELECT * FROM `area`";
+	$sql="SELECT * FROM `area` WHERE deleted = 0";
 	$query=mysql_query($sql);
 	$result_num = mysql_num_rows($query);
 	$areaId = array();
