@@ -53,12 +53,15 @@ function clickToShowFrame(){
 		buttons[j].onclick = function(){
 			frameDiv.style.display = "block";
 			iframe.src = 'http://localhost/HCI-forum/'+areaId+'?board=0';
+			document.body.style.overflow = "hidden";
+			scrollTo(0,0);
 		}
 	}
 
 	var closeButton = document.getElementById('close-button');
 	closeButton.onclick = function(){
 		frameDiv.style.display = "none";
+		document.body.style.overflow = "auto";
 		window.location.reload();
 	}
 
