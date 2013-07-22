@@ -22,8 +22,3 @@
 			}
 	}
 ?>
-
-<div id="frameDiv">
-	<iframe src="" frameborder="0" id="iframe"></iframe>
-	<div id="close-button"></div>
-</div>

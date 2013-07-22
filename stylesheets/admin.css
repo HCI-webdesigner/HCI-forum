@@ -96,7 +96,7 @@
 
 #frameDiv{
 	width: 100%;
-	height: 110%;
+	height: 100%;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -116,12 +116,19 @@
 	overflow: auto;
 }
 
-#close-button{
+.if-button{
 	width: 80px;
 	height: 80px;
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	background: url(../images/close.png);
+	float: right;
 	cursor: pointer;
+}
+
+#close-button{
+	background: url(../images/close.png);
+}
+#forward-button{
+	background: url(../images/forward.png);
+}
+#back-button{
+	background: url(../images/back.png);
 }

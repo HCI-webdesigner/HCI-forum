@@ -50,6 +50,7 @@ function clickToShowFrame(){
 		var j=i;
 		var areaId = spanButtons[i].id;
 		spanButtons[j].onclick = function(){
+			document.body.style.overflow = "hidden";
 			frameDiv.style.display = "block";
 			iframe.src = 'http://localhost/HCI-forum/Controller/adminPostCon.php?area='+areaId+'?board=0';
 		}
@@ -58,5 +59,16 @@ function clickToShowFrame(){
 	var closeButton = document.getElementById('close-button');
 	closeButton.onclick = function(){
 		frameDiv.style.display = "none";
+		document.body.style.overflow = "auto";
+	}
+
+	var backButton = document.getElementById('back-button');
+	backButton.onclick = function(){
+		iframe.contentWindow.history.back();
+	}
+
+	var forwardButton = document.getElementById('forward-button');
+	forwardButton.onclick = function(){
+		iframe.contentWindow.history.forward();
 	}
 }
