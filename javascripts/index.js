@@ -30,8 +30,11 @@ function checkLogin(){
 				infoBox.innerHTML += '您的积分是:'+obj.score+'&nbsp;&nbsp;您的等级是:'+obj.level+'<br/>';
 				infoBox.innerHTML += '您可以:&nbsp;&nbsp;<a href="/HCI-forum/View/sendView.html">发帖</a>';
 				infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/Controller/logout.php">注销</a>';
-				if(obj.auth == '1'){
+				if(obj.auth == '2'){
 					infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/Controller/adminCon.php">后台管理</a>';
+				}
+				else if(obj.auth == '1'){
+					infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/View/moderatorIndex.php?area='+obj.area+'">版主页面</a>';
 				}
 			}
 			else{
