@@ -5,17 +5,11 @@
 	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
 	$conn = new DataAccess("hciForum");
 	$areaId = $_GET['id'];
-	echo $areaId;
 	$deleteSQL = "UPDATE `area` SET deleted='1' WHERE id='$areaId'";
 	if(mysql_query($deleteSQL)) {
-		echo "<script language=javascript>alert('删除成功');location='adminCon.php?action=2'</script>";
+		echo "1";
 	}
 	else {
-		echo "error";
-		echo $deleteSQL;
+		echo "0";
 	}
 ?>
-<html>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-
-</html>
