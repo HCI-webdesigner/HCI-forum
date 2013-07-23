@@ -20,7 +20,5 @@
 			require_once(ROOT . DS . "Controller" . DS . "adminCon1.php");
 			break;
 	}
-
-	require_once('/var/www/HCI-forum/View/adminFooter.html');
-
+	require_once(ROOT .  DS . "View" . DS . "adminFooter.html");
 ?>

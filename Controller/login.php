@@ -24,7 +24,7 @@
 		$_SESSION['level'] = $level;
 		$_SESSION['auth'] = $auth;
 		$_SESSION['state'] = true;
-		if(!$auth) {
+		if($auth!=2) {
 			echo "<script language=javascript>location='/HCI-forum/';</script>";
 		}
 		else {

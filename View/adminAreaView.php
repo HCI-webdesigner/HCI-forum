@@ -1,3 +1,4 @@
+<script type="text/javascript" src='/HCI-forum/javascripts/delete.js'></script>
 <div id="settings">
 	<a href="/HCI-forum/Controller/addAreaController.php"><h3>增加模块</h3></a>
 </div>
@@ -16,7 +17,7 @@
 		<h3><?php echo $areaname;?></h3>
 		</span> <!-- href="../Controller/adminPostCon.php?area=<?php echo $areaId[$key];?>&board=0" -->
 		<span class='buttons' id="Controller/editArea.php?id=<?php echo $areaId[$key];?>">编辑</span></a>
-		<span class="buttons" id="Controller/deleteArea.php?id=<?php echo $areaId[$key];?>">删除</span></a>
+		<a href="#" onclick="delete(<?php echo $areaid[$key];?>)">删除</span></a>
 	</div>
 <?php
 			}
