@@ -29,4 +29,4 @@
 <?php
 	}
 ?>
-	<a href="/HCI-forum/Controller/addAnm.php">添加</a>
+	<a href="/HCI-forum/Controller/addAnm.php?area=<?php echo $areaId;?>">添加</a>
