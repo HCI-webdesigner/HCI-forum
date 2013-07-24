@@ -1,5 +1,6 @@
 <html>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<script type="text/javascript" src='/HCI-forum/javascripts/delBoard.js'></script>
 </html>
 <?php
 	define("DS", DIRECTORY_SEPARATOR);
@@ -26,8 +27,10 @@
 	}
 	foreach ($boardName as $key => $boardname) {
 ?>
-	<?php echo $boardname;?><a href="delBoard.php">删除</a>
-	<a href="editBoard.php">编辑</a><br>
+	<div class="area">
+		<?php echo $boardname;?><a href="#" onclick="delBoard(<?php echo $boardId[$key];?>)">删除</a>
+		<a href="/HCI-forum/Controller/editBoard.php?board=<?php echo $boardId[$key];?>">编辑</a><br>
+	</div>
 <?php
 	}
 ?>
