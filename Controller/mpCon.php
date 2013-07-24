@@ -37,7 +37,7 @@
 	?>
 	<a href="mpCon.php?id=<?php echo $postId[$key];?>&action=4&area=<?php echo $areaId;?>">锁定</a>
 	<a href="mpCon.php?id=<?php echo $postId[$key];?>&action=5&area=<?php echo $areaId;?>">删除帖子</a>	
-	<a href="mpCon.php?id=<?php echo $postId[$key];?>&action=6&area=<?php echo $areaId;?>">移动帖子</a><br>
+	<a href="movePost.php?id=<?php echo $postId[$key];?>&action=6&area=<?php echo $areaId;?>">移动帖子</a><br>
 <?php
 	}
 	$action=$_GET['action'];
