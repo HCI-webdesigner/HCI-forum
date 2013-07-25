@@ -16,6 +16,9 @@
 		case 3:
 			require_once(ROOT . DS . "Controller" . DS . "adminCon3.php");
 			break;
+		case 4:
+			require_once(ROOT . DS . "Controller" . DS . "adminCon4.php");
+			break;
 		default:
 			require_once(ROOT . DS . "Controller" . DS . "adminCon1.php");
 			break;

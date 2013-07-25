@@ -4,14 +4,13 @@
 	include_once(ROOT . DS . "Model" . DS . "DataAccess.php");
 
 	$conn = new DataAccess("hciForum");
-	$postFBSQL = "SELECT post.* FROM post,feedback WHERE feedback.post_id=post.id";
-	$postId = array();
-	$postTitle = array();
-	$postContent = array();
+	$postFBSQL = "SELECT comment.* FROM comment,feedback WHERE feedback.comment_id=comment.id";
+	$commentId = array();
+	$commentContent = array();
 	$fbContent = array();
 	$fbDate = array();
-	$postUser = array();
-	$feedbackSQL = "SELECT * FROM `feedback` WHERE comment_id='0'";
+	$commentUser = array();
+	$feedbackSQL = "SELECT * FROM `feedback` WHERE post_id='0'";
 	$fbQuery = mysql_query($feedbackSQL);
 	$feedbackUser = array();
 	while($feedbackRows=mysql_fetch_array($fbQuery)) {
@@ -22,15 +21,14 @@
 		array_push($feedbackUser, $uResult[0]);
 	}
 	$postQuery = mysql_query($postFBSQL);
-	while($postRows=mysql_fetch_array($postQuery)) {
-		array_push($postTitle, $postRows['title']);
-		array_push($postContent, $postRows['content']);
-		$userSQL = "SELECT account FROM `user` WHERE id='$postRows[user_id]'";
+	while($commentRows=mysql_fetch_array($postQuery)) {
+		array_push($commentContent, $commentRows['content']);
+		$userSQL = "SELECT account FROM `user` WHERE id='$commentRows[user_id]'";
 		$userResult = mysql_fetch_array(mysql_query($userSQL));
-		array_push($postUser, $userResult[0]);
-		array_push($postId, $postRows['id']);
+		array_push($commentUser, $userResult[0]);
+		array_push($commentId, $commentRows['id']);
 	}
-	include_once(ROOT . DS . "View" . DS . "verifyView.php");
+	include_once(ROOT . DS . "View" . DS . "verifyCommentView.php");
 ?>
 <html>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">

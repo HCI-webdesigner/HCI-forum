@@ -8,8 +8,8 @@
 	$fbDate = date('Y-m-d H:i:s');
 	if($_POST['sub']) {
 		$postId = $_POST['postId'];
-		$informSql = "INSERT INTO `feedback` (id,content,fb_date,post_id,comment_id) values
-		('','$_POST[content]','$fbDate','$postId','0')";
+		$informSql = "INSERT INTO `feedback` (id,content,fb_date,post_id,comment_id,user_id) values
+		('','$_POST[content]','$fbDate','$postId','0','$_SESSION[id]')";
 		if(mysql_query($informSql)) {
 			echo "<script language=javascript>alert('举报成功，举报结果会在24小时内反馈');
 			location='/HCI-forum/Controller/onePostCon.php?postId=$postId';</script>";
