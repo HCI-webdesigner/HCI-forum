@@ -34,7 +34,7 @@ function checkLogin(){
 					infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/Controller/adminCon.php">后台管理</a>';
 				}
 				else if(obj.auth == '1'){
-					infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/View/moderatorIndex.php?area='+obj.area+'">版主页面</a>';
+					infoBox.innerHTML += '&nbsp;&nbsp;&nbsp;&nbsp;<a href="/HCI-forum/View/moderatorIndex.php?area='+obj.area+'">版主管理</a>';
 				}
 			}
 			else{
