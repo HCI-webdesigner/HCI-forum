@@ -12,6 +12,7 @@
 <a href="/HCI-forum/Controller/editUserMsg.php?id=<?php echo $userId;?>&area=<?php echo $areaId;?>">修改个人信息</a><br>
 <a href="/HCI-forum/Controller/eaBoard.php?area=<?php echo $areaId;?>">修改或增加子模块</a><br>
 <a href="/HCI-forum/Controller/editLogo.php?area=<?php echo $areaId;?>">修改版块的logo</a><br>
+<a href="/HCI-forum/Controller/informCon.php?area=<?php echo $areaId;?>">处理举报信息</a>
 <html>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 </html>

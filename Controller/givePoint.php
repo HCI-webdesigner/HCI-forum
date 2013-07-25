@@ -26,14 +26,24 @@
 			$pointI = $_POST["point".$i];
 			$cId = $commentId[$i-1];
 			$uId = $userId[$i-1];
+			$upSql = "SELECT `score` FROM `user` WHERE id='$uId'";
+			$pResult = mysql_fetch_array(mysql_query($upSql));
+			$luScore = $pResult[0]/100;
 			$cSql = "UPDATE `comment` SET cpoint=cpoint+$pointI WHERE id='$cId'";
 			$uSql = "UPDATE `user` SET score=score+$pointI WHERE id='$uId'";
 			$pSql = "UPDATE `post` SET `point`=`point`-$pointI WHERE id='$postId'";
 			// echo $cSql;
 			// echo $uSql;
 			// echo $pSql;
-			if(mysql_query($cSql) && mysql_query($uSql) && mysql_query($pSql))
+			if(mysql_query($cSql) && mysql_query($uSql) && mysql_query($pSql)) {
+				$lSql = "SELECT `score` FROM `user` WHERE id='$uId'";
+				$uScore = mysql_fetch_array(mysql_query($lSql));
+				if(floor($uScore[0]/100) > floor($luScore)) {
+					$lSql = "UPDATE `user` SET level=level+1 WHERE id='$uId'";
+					mysql_query($lSql);
+				}
 				continue;
+			}
 			else
 				break;
 		}

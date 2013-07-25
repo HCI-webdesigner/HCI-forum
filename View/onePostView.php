@@ -6,7 +6,8 @@
 	}
 	if($post_user == $_SESSION['usr'] && $post_point != 0) {
 ?>
-	<a href="/HCI-forum/View/givePointV.php?id=<?php echo $postId;?>&point=<?php echo $post_point;?>">给分</a>
+	<a href="/HCI-forum/View/givePointV.php?id=<?php echo $postId;?>
+	&point=<?php echo $post_point;?>">给分</a>
 <?php
 	}
 ?>
@@ -16,6 +17,7 @@
 			<h2><?php echo $post_user;?>:</h2>
 			<p><?php echo $post_content;?></p>
 			<p class="time">发表于:&nbsp;<?php echo $post_date;?></p>
+			<a href="/HCI-forum/Controller/informPost.php?id=<?php echo $postId;?>">举报</a>
 			</div>
 <?php
 	foreach ($commentUser as $key => $commentuser) {
@@ -25,6 +27,7 @@
 				<p><?php echo $commentContent[$key];?></p>
 				<p class="time">发表于:&nbsp;<?php echo $commentDate[$key];?></p>
 				<p>得分 : <?php echo $commentPoint[$key];?></p>
+				<a href="/HCI-forum/Controller/informComment.php?id=<?php echo $commentId[$key];?>&post=<?php echo $postId;?>">举报</a>
 			</div>
 <?php
 	}

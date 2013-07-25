@@ -23,12 +23,14 @@
 	$commentUser = array();
 	$commentDate = array();
 	$commentPoint = array();
+	$commentId = array();
 	while($comment_rows = mysql_fetch_array($comment_query)) {
 		array_push($commentContent, $comment_rows['content']);
 		$comment_user = mysql_fetch_array(mysql_query("SELECT account FROM `user` WHERE id='$comment_rows[user_id]'"));
 		array_push($commentUser, $comment_user[0]);
 		array_push($commentDate, $comment_rows['comment_date']);
 		array_push($commentPoint, $comment_rows['cpoint']);
+		array_push($commentId, $comment_rows['id']);
 	}
 	include_once(ROOT . DS . "View" . DS . "onePostView.php");
 	include_once(ROOT . DS . "View" . DS . "postFooter.html");
