@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 24, 2013 at 08:30 PM
+-- Generation Time: Jul 25, 2013 at 09:32 PM
 -- Server version: 5.5.31-0ubuntu0.13.04.1
 -- PHP Version: 5.4.9-4ubuntu2.2
 
@@ -69,13 +69,13 @@ CREATE TABLE IF NOT EXISTS `area` (
 --
 
 INSERT INTO `area` (`id`, `name`, `count`, `icon_url`, `deleted`, `user_id`) VALUES
-(1, '前端开发2', 6, '/HCI-forum/images/front.png', 0, 10),
+(1, '前端开发2', 8, '/HCI-forum/images/front.png', 0, 10),
 (2, '后台开发', 0, '/HCI-forum/images/back.png', 0, 10),
 (3, '移动开发', 0, '/HCI-forum/images/mobile.png', 0, 10),
 (4, '系统测试', 0, '/HCI-forum/images/os.png', 0, 10),
 (5, '资源共享', 0, '/HCI-forum/images/resource.png', 0, 10),
 (6, '职场资讯', 0, '/HCI-forum/images/Jobs.png', 0, 10),
-(7, '灌水专区', 0, '/HCI-forum/images/chat.png', 0, 10),
+(7, '灌水专区', 0, '/HCI-forum/images/chat.png', 1, 10),
 (15, 'HCI2', 0, '/HCI-forum/images/aboutus.jpg', 1, 10);
 
 -- --------------------------------------------------------
@@ -90,7 +90,7 @@ CREATE TABLE IF NOT EXISTS `board` (
   `area_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `area_id` (`area_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=27 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=26 ;
 
 --
 -- Dumping data for table `board`
@@ -134,35 +134,41 @@ CREATE TABLE IF NOT EXISTS `comment` (
   `content` longtext NOT NULL,
   `comment_date` datetime NOT NULL,
   `deleted` int(11) NOT NULL,
+  `cpoint` int(5) NOT NULL,
   `post_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `post_id` (`post_id`),
   KEY `user1_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
 -- Dumping data for table `comment`
 --
 
-INSERT INTO `comment` (`id`, `content`, `comment_date`, `deleted`, `post_id`, `user_id`) VALUES
-(3, '楼主好人一生平安！', '2013-07-17 00:00:00', 0, 4, 10),
-(4, '楼主好人一生平安!！', '2013-07-17 00:00:00', 0, 4, 10),
-(5, '楼主好人一生平安!!！', '2013-07-17 00:00:00', 0, 4, 10),
-(6, '楼主好人一生平安!!!！', '2013-07-17 00:00:00', 0, 4, 13),
-(7, '楼主好人一生平安!!!!！', '2013-07-17 00:00:00', 0, 4, 13),
-(8, '楼主好人一生平安!!!!!！', '2013-07-17 00:00:00', 0, 4, 10),
-(9, '楼主好人一生平安！', '2013-07-17 00:00:00', 0, 5, 13),
-(10, '楼主好人一生平安！!', '2013-07-17 00:00:00', 0, 5, 10),
-(11, '楼主好人一生平安！!!', '2013-07-17 00:00:00', 0, 5, 13),
-(12, '楼主好人一生平安！!!!', '2013-07-17 00:00:00', 0, 5, 10),
-(13, '楼主好人一生平安！!!!!', '2013-07-17 00:00:00', 0, 5, 13),
-(14, '楼主好人一生平安！!!!!!', '2013-07-17 00:00:00', 0, 6, 13),
-(15, '楼主好人一生平安！', '2013-07-17 00:00:00', 0, 6, 13),
-(16, '楼主好人一生平安！!', '2013-07-17 00:00:00', 0, 7, 13),
-(17, '楼主好人一生平安！!!', '2013-07-17 00:00:00', 0, 7, 10),
-(18, '楼主好人一生平安！!!!', '2013-07-17 00:00:00', 0, 7, 13),
-(19, '楼主好人一生平安！!!!!', '2013-07-17 00:00:00', 0, 7, 10);
+INSERT INTO `comment` (`id`, `content`, `comment_date`, `deleted`, `cpoint`, `post_id`, `user_id`) VALUES
+(3, '楼主好人一生平安！', '2013-07-17 00:00:00', 0, 0, 4, 10),
+(4, '楼主好人一生平安!！', '2013-07-17 00:00:00', 0, 0, 4, 10),
+(5, '楼主好人一生平安!!！', '2013-07-17 00:00:00', 0, 0, 4, 10),
+(6, '楼主好人一生平安!!!！', '2013-07-17 00:00:00', 0, 0, 4, 13),
+(7, '楼主好人一生平安!!!!！', '2013-07-17 00:00:00', 0, 0, 4, 13),
+(8, '楼主好人一生平安!!!!!！', '2013-07-17 00:00:00', 0, 0, 4, 10),
+(9, '楼主好人一生平安！', '2013-07-17 00:00:00', 0, 0, 5, 13),
+(10, '楼主好人一生平安！!', '2013-07-17 00:00:00', 0, 0, 5, 10),
+(11, '楼主好人一生平安！!!', '2013-07-17 00:00:00', 0, 0, 5, 13),
+(12, '楼主好人一生平安！!!!', '2013-07-17 00:00:00', 0, 0, 5, 10),
+(13, '楼主好人一生平安！!!!!', '2013-07-17 00:00:00', 0, 0, 5, 13),
+(14, '楼主好人一生平安！!!!!!', '2013-07-17 00:00:00', 0, 0, 6, 13),
+(15, '楼主好人一生平安！', '2013-07-17 00:00:00', 0, 0, 6, 13),
+(16, '楼主好人一生平安！!', '2013-07-17 00:00:00', 0, 0, 7, 13),
+(17, '楼主好人一生平安！!!', '2013-07-17 00:00:00', 0, 0, 7, 10),
+(18, '楼主好人一生平安！!!!', '2013-07-17 00:00:00', 0, 0, 7, 13),
+(19, '楼主好人一生平安！!!!!', '2013-07-17 00:00:00', 0, 0, 7, 10),
+(20, '飘过', '2013-07-24 20:41:09', 0, 0, 21, 10),
+(21, '顶一顶', '2013-07-24 20:41:20', 0, 0, 21, 10),
+(22, '三个梵蒂冈', '2013-07-24 20:42:00', 0, 0, 15, 10),
+(23, 'var', '2013-07-25 11:40:58', 0, 24, 22, 10),
+(24, 'var', '2013-07-25 13:26:30', 0, 6, 22, 10);
 
 -- --------------------------------------------------------
 
@@ -192,13 +198,14 @@ CREATE TABLE IF NOT EXISTS `debate` (
 CREATE TABLE IF NOT EXISTS `feedback` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `content` longtext NOT NULL,
-  `date` datetime NOT NULL,
+  `fb_date` datetime NOT NULL,
   `post_id` int(11) NOT NULL,
   `comment_id` int(11) NOT NULL,
+  `user_id` int(10) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `post3_id` (`post_id`),
   KEY `comment_id` (`comment_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -221,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   PRIMARY KEY (`id`),
   KEY `board_id` (`board_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=22 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=23 ;
 
 --
 -- Dumping data for table `post`
@@ -245,7 +252,8 @@ INSERT INTO `post` (`id`, `title`, `content`, `type`, `point`, `deleted`, `post_
 (18, '系统', '还是安全', 0, 0, 0, '2013-07-22 15:03:00', 0, 0, 13, 10),
 (19, '移动！！！', 'IOS！！！！', 0, 0, 0, '2013-07-22 15:03:27', 0, 0, 11, 10),
 (20, '职场。。。', '活动。。。', 0, 0, 0, '2013-07-22 15:06:32', 0, 0, 21, 10),
-(21, '灌水', '水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水', 0, 0, 0, '2013-07-22 15:07:10', 0, 0, 25, 10);
+(21, '灌水', '水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水水', 0, 0, 0, '2013-07-22 15:07:10', 0, 0, 25, 10),
+(22, 'qiujiu', 'javascript中的变量怎么定义', 1, 0, 0, '2013-07-25 11:36:05', 0, 0, 3, 10);
 
 -- --------------------------------------------------------
 
@@ -268,7 +276,7 @@ CREATE TABLE IF NOT EXISTS `user` (
 --
 
 INSERT INTO `user` (`id`, `account`, `score`, `level`, `authority`, `password`) VALUES
-(10, 'hhq', 0, 0, 1, '9e8ca68bf7de888a350681d2f060c18e'),
+(10, 'hhq', 105, 6, 1, '9e8ca68bf7de888a350681d2f060c18e'),
 (13, '胡华泉', 0, 0, 2, '9e8ca68bf7de888a350681d2f060c18e'),
 (14, 'zsl', 999, 999, 1, '202cb962ac59075b964b07152d234b70');
 
@@ -321,13 +329,6 @@ ALTER TABLE `comment`
 ALTER TABLE `debate`
   ADD CONSTRAINT `post1_id` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`),
   ADD CONSTRAINT `user2_id` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
-
---
--- Constraints for table `feedback`
---
-ALTER TABLE `feedback`
-  ADD CONSTRAINT `comment_id` FOREIGN KEY (`comment_id`) REFERENCES `comment` (`id`),
-  ADD CONSTRAINT `post3_id` FOREIGN KEY (`post_id`) REFERENCES `post` (`id`);
 
 --
 -- Constraints for table `post`
