@@ -34,7 +34,7 @@
 	}
 	include_once(ROOT . DS . "View" . DS . "onePostView.php");
 	if($post_type == 2) {
-		include_once(ROOT . DS . "View" . DS . "debateFooter.html");
+		include_once(ROOT . DS . "View" . DS . "debateFooter.php");
 	}
 	else {
 		include_once(ROOT . DS . "View" . DS . "postFooter.html");

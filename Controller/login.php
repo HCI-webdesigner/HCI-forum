@@ -18,6 +18,7 @@
 		$score = $info['score'];
 		$level = $info['level'];
 		$auth = $info['authority'];
+		$side = $info['side'];
 		if($auth == 1) {
 			$asql = "SELECT id FROM `area` WHERE user_id='$id'";
 			$query = mysql_query($asql);
@@ -31,6 +32,7 @@
 		$_SESSION['auth'] = $auth;
 		$_SESSION['state'] = true;
 		$_SESSION['area'] = $areaId;
+		$_SESSION['side'] = $side;
 		if($auth!=2) {
 			echo "<script language=javascript>location='/HCI-forum/';</script>";
 		}
