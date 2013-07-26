@@ -23,11 +23,18 @@
 	$sql = "INSERT INTO `post`(`title`, `content`, `type`, `point`, `deleted`, `post_date`, `state`, `board_id`, `user_id`) 
 	VALUES ('$title','$content','$type','$point','$deleted','$postDate','$state','$boardId','$userId')";
 	mysql_query($sql);
-
 	$getPost = "SELECT id FROM `post` WHERE title='$title'";
 	$result = mysql_query($getPost);
 	$resultArr = mysql_fetch_array($result);
 	$postId = $resultArr['id'];
+
+	if($type == 2) {
+		$debateSQL = "INSERT INTO `debate` (`content`,`side`,`date`,`post_id`,`user_id`)
+		values('$content', '1', '$postDate', '$postId', '$userId')";
+		mysql_query($debateSQL);
+	}
+	else {
+	}
 
 	$sql2 = "SELECT post.* FROM post,board WHERE
 			post.board_id=board.id AND board.area_id='$areaId'";

@@ -33,5 +33,10 @@
 		array_push($commentId, $comment_rows['id']);
 	}
 	include_once(ROOT . DS . "View" . DS . "onePostView.php");
-	include_once(ROOT . DS . "View" . DS . "postFooter.html");
+	if($post_type == 2) {
+		include_once(ROOT . DS . "View" . DS . "debateFooter.html");
+	}
+	else {
+		include_once(ROOT . DS . "View" . DS . "postFooter.html");
+	}
 ?>

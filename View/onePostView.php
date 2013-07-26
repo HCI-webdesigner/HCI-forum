@@ -4,10 +4,15 @@
 			<div id="type">问题点数 : <?php echo $post_point;?></div>
 <?php
 	}
-	if($post_user == $_SESSION['usr'] && $post_point != 0) {
+	if($post_user == $_SESSION['usr'] && $post_point != 0 && $post_type == 1) {
 ?>
 	<a href="/HCI-forum/View/givePointV.php?id=<?php echo $postId;?>
 	&point=<?php echo $post_point;?>">给分</a>
+<?php
+	}
+	else if($post_user != $_SESSION['usr'] && $post_type == 2) {
+?>
+	<a href="HCI-forum/View/voteView.php?id=<?php echo $postId;?>">投票</a>
 <?php
 	}
 ?>

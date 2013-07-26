@@ -46,8 +46,9 @@
 	}
 
 	function deletePost($id) {
-		$delPostSQL = "UPDATE `post` SET deleted=1 FROM WHERE id='$id'";
-		if(mysql_query($delPostSQL)) {
+		$delPostSQL = "UPDATE `post` SET deleted=1 WHERE id='$id'";
+		$delFBsql = "DELETE FROM `feedback` WHERE post_id='$id'";
+		if(mysql_query($delPostSQL) && mysql_query($delFBsql)) {
 			echo "<script language=javascript>alert('操作成功');
 			location='/HCI-forum/Controller/adminCon.php?action=1';</script>";
 		}
@@ -63,7 +64,8 @@
 
 	function deleteComment($id) {
 		$delCommentSQL = "UPDATE `comment` SET deleted='1' WHERE id='$id'";
-		if(mysql_query($delCommentSQL)) {
+		$delFbSQL = "DELETE FROM `feedback` WHERE comment_id='$id'";
+		if(mysql_query($delCommentSQL) && mysql_query($delFbSQL)) {
 			echo "<script language=javascript>alert('操作成功');
 			location='/HCI-forum/Controller/adminCon.php?action=1';</script>";
 		}
