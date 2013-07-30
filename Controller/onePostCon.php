@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	// session_start();
 	define("DS",DIRECTORY_SEPARATOR);
 	define("ROOT",dirname(dirname(__FILE__)));
 	require_once(ROOT . DS . "View" . DS. "postHeader.php");
