@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>发表帖子</title>
+	<link rel="stylesheet" href="../stylesheets/send.css" />
+</head>
+<body>
+	<div id="main">
+		<form action="/HCI-forum/Controller/savePost.php" id="sendForm" method="post">
+			<label for="title">标题：</label>
+			<input type="text" name="title" id="form-title"/><br />
+			<label for="content">内容：</label>
+			<textarea name="content" id="form-content" cols="60" rows="20"></textarea><br />
+			<label for="type">类型：</label>
+			<select name="type" id="form-type">
+				<option value="0">普通</option>
+				<option value="1">求助</option>
+				<option value="2">辩论</option>
+				<option value="4">精华</option>
+			</select>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="point">悬赏：</label>
+			<select name="point" id="form-point">
+				<option value="0">0分</option>
+				<option value="5">5分</option>
+				<option value="10">10分</option>
+				<option value="15">15分</option>
+				<option value="20">20分</option>
+			</select>
+			<br />
+			<label for="areaId">板块：</label>
+			<select name="areaId" id="select-list1">
+				<option value="0">--请--选--择--</option>
+				<option value="1">前端开发</option>
+				<option value="2">后台开发</option>
+				<option value="3">移动开发</option>
+				<option value="4">系统测试</option>
+				<option value="5">资源共享</option>
+				<option value="6">职场资讯</option>
+				<option value="7">纯粹灌水</option>
+			</select>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="boardId">专题：</label>
+			<select name="boardId" id="select-list2">
+				<option value="0">--请--选--择--</option>
+			</select>
+			<br />
+			<input type="submit" id="form-submit"/>
+			<input type="reset" />
+		</form>
+	</div>
+
+	<script type="text/javascript" src="../javascripts/send.js"></script>
+</body>
+</html>

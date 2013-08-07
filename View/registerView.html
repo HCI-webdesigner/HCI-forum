@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>注册</title>
+	<link rel="stylesheet" href="../stylesheets/register.css" />
+</head>
+<body>
+	<div id="main">
+		<form action="/HCI-forum/Controller/register.php" method="POST">
+			<label for="userName">用户名：</label>
+			<input type="text" name="userName" id="n"/><br />
+			<label for="pwd">密码：</label>
+			<input type="password" name="pwd" id="p"/><br />
+			<label for="pwd_confirm">确认密码：</label>
+			<input type="password" name="pwd_confirm" id="pc"/><br />
+			<input type="submit" name="sub" id="sub"/>&nbsp;&nbsp;<input type="reset" />
+		</form>
+	</div>
+
+	<script type="text/javascript">
+	window.onload = function(){
+		var sub = document.getElementById('sub');
+		var n = document.getElementById('n');
+		var p = document.getElementById('p');
+		var pc = document.getElementById('pc');
+		sub.onclick = function(){
+			if(n.value == ""){
+				alert("您还没有输入用户名哦！");
+				return false;
+			}
+			else if(p.value == ""){
+				alert("您还没有输入密码哦！");
+				return false;
+			}
+			else if(pc.value == ""){
+				alert("您还没有确认密码哦！");
+				return false;
+			}
+		}
+	}
+	</script>
+</body>
+</html>
